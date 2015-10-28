@@ -43,6 +43,28 @@ function songGain(number){
 	};
 };
 
+//inspiration buildings
+
+var stare = 0;
+
+function buyStare(){
+	var StareCost = Math.floor(25 * Math.pow(1.2, stare));
+	if (inspiration >= StareCost){
+		stare = stare + 1;
+		inspiration = inspiration - StareCost;
+		document.getElementById("stare").innerHTML = stare;
+		document.getElementById("inspiration").innerHTML = inspiration;
+	};
+	var nextCost = Math.floor(25 * Math.pow(1.2, stare));
+	document.getElementById("StareCost").innerHTML = nextCost;
+};
+
+window.setInterval(function(){
+	inspirationGain(stare);
+}, 1000)
+
+//inspiration stats
+
 //auto-gain functions and gain interval
 
 function fanGain(){
