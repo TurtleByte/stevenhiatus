@@ -1,3 +1,15 @@
+//Animations
+
+$(function(){
+	$('#Gameplay').hide().show(1000);
+	$('#Currencies').hide().show(500);
+	$.notify({
+	title: '<strong>Warning!</strong>',
+	message: "All of this is a work in progress so just sit tight and maybe I'll fix things"
+},{
+	type: 'danger'
+});
+})
 
 //variables
 var note = 0;
