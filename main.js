@@ -66,6 +66,15 @@ function buyStare(){
 		inspiration = inspiration - StareCost;
 		document.getElementById("stare").innerHTML = stare;
 		document.getElementById("inspiration").innerHTML = inspiration;
+	}
+	else{
+		$.notify({
+		// options
+		message: "<strong>Not enough Inspiration!</strong> You don't have enough inspiration to buy that." 
+		},{
+		// settings
+		type: 'danger'
+		});
 	};
 	var nextCost = Math.floor(25 * Math.pow(1.2, stare));
 	document.getElementById("StareCost").innerHTML = nextCost;
