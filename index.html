@@ -4,8 +4,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://bootstrap-notify.remabledesigns.com/js/bootstrap-notify.min.js"></script>
 	<style type="text/css">
    body {background:#E4F4FA !important; }
    .alert{width:60%;}
@@ -18,14 +20,8 @@
   <div class="well well-sm"><h1>Music Clicker<small> Turn your brain into music and ultimately, cash</small></h1></div>
 </div>
 
-<div align=center>
-<div class="alert alert-danger">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Warning!</strong> All of this is a work in progress so just sit tight, and maybe I'll fix things.
-</div>
-</div>
 
-<div class="row" align=center>
+<div id="Currencies" class="row" align=center>
 	<div class="well well-sm col-sm-2"><h4>Inspiration<br><span id="inspiration">0</span></h4></div>
 	<div class="well well-sm col-sm-2"><h4>Notes<br><span id="note">0</span></h4></div>
 	<div class="well well-sm col-sm-2"><h4>Lyrics<br><span id="lyric">0</span></h4></div>
@@ -34,7 +30,7 @@
 	<div class="well well-sm col-sm-2"><h4>Money<br><span id="money">0</span></h4></div>
 </div>
 
-<div class="container">
+<div id="Gameplay" class="container">
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#Buttons"><span class="glyphicon glyphicon-plus"></span> Buttons</a></li>
     <li><a data-toggle="tab" href="#Inspiration"><span class="glyphicon glyphicon-cloud"></span> Inspiration</a></li>
@@ -101,7 +97,8 @@
 	<div id="Information" class="tab-pane fade">
       <h2>Information <small>Stuff you might want to know</small></h2>
 	  <h3>Changelog</h3>
-	  <h4>October 28, 2012 <small>Basic Generation</small></h4> Made an autogenerator for the inspiration tab to copy-paste to all the rest.
+	  <h4>October 31, 2015 <small>Priorities and UI</small>I'm trying to distract myself from building up the core game by instead focusing on making the front end look slightly better.
+	  <h4>October 28, 2015 <small>Basic Generation</small></h4> Made an autogenerator for the inspiration tab to copy-paste to all the rest.
 	  <h4>October 25, 2015 <small>Online</small></h4> I actually put the site online. God help me.
 	  <h4>October 24, 2015 <small>The Foundations</small></h4> I finished the base functionality. (All six of the main currencies have generation rules now.) Now I have to build the whole thing.
 	  <h3>Instructions</h3>
