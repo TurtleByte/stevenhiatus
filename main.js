@@ -1,8 +1,8 @@
 //Animations
 
 $(function(){
-	$('#Gameplay').hide().show(1000);
-	$('#Currencies').hide().show(500);
+	$('#Gameplay').hide().slideDown(800);
+	$('#Currencies').hide().slideDown(800);
 	$.notify({
 	title: '<strong>Warning!</strong>',
 	message: "All of this is a work in progress so just sit tight and maybe I'll fix things"
@@ -11,7 +11,7 @@ $(function(){
 });
 })
 
-//variables
+//currency variables
 var note = 0;
 var lyric = 0;
 var inspiration = 0;
@@ -60,7 +60,7 @@ function songGain(number){
 var stare = 0;
 
 function buyStare(){
-	var StareCost = Math.floor(25 * Math.pow(1.2, stare));
+	var StareCost = Math.floor(50 * Math.pow(1.15, stare));
 	if (inspiration >= StareCost){
 		stare = stare + 1;
 		inspiration = inspiration - StareCost;
@@ -76,7 +76,7 @@ function buyStare(){
 		type: 'danger'
 		});
 	};
-	var nextCost = Math.floor(25 * Math.pow(1.2, stare));
+	var nextCost = Math.floor(50 * Math.pow(1.15, stare));
 	document.getElementById("StareCost").innerHTML = nextCost;
 };
 
@@ -84,7 +84,25 @@ window.setInterval(function(){
 	inspirationGain(stare);
 }, 1000)
 
-//inspiration stats
+//lyric buildings
+
+var radio = 0;
+
+function buyRadio(){
+	var RadioCost = Math.floor(25 * Math.pow(1.2, radio));
+	if (lyric >= RadioCost){
+		radio = radio + 1;
+		lyric = lyric - RadioCost;
+		document.getElementById('radio').innerHTML = radio;
+		document.getElementById('lyric').innerHTML = lyric;
+	};
+	var nextCost = Math.floor(25 * Math.pow(1.2, radio));
+	document.getElementById('RadioCost').innerHTML = nextCost;
+};
+
+window.setInterval(function(){
+	inspirationGain(radio);
+}, 1000)
 
 //auto-gain functions and gain interval
 
