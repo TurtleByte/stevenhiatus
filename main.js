@@ -73,7 +73,11 @@ function buyStare(){
 		message: "<strong>Not enough Inspiration!</strong> You don't have enough inspiration to buy that." 
 		},{
 		// settings
-		type: 'danger'
+		type: 'danger',
+		animate: {
+		enter: 'animated fadeInRight',
+		exit: 'animated fadeOutRight'
+	}
 		});
 	};
 	var nextCost = Math.floor(50 * Math.pow(1.15, stare));
