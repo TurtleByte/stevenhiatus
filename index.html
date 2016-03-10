@@ -34,8 +34,7 @@
 
 <div id="Gameplay" class="container">
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#Buttons"><span class="glyphicon glyphicon-plus"></span> Buttons</a></li>
-    <li><a data-toggle="tab" href="#Inspiration"><span class="glyphicon glyphicon-cloud"></span> Inspiration</a></li>
+    <li class="active"><a data-toggle="tab" href="#Inspiration"><span class="glyphicon glyphicon-cloud"></span> Inspiration</a></li>
     <li><a data-toggle="tab" href="#Notes"><span class="glyphicon glyphicon-music"></span> Notes</a></li>
     <li><a data-toggle="tab" href="#Lyrics"><span class="glyphicon glyphicon-pencil"></span> Lyrics</a></li>
     <li><a data-toggle="tab" href="#Songs"><span class="glyphicon glyphicon-headphones"></span> Songs</a></li>
@@ -47,19 +46,7 @@
   </ul>
 
   <div class="tab-content">
-	<div id="Buttons" class="tab-pane fade in active">
-	<h2>Buttons <small>Where it all begins</small></h2>
-	<div class="container" align="center">
-		<button type="button" class="btn btn-success btn-lg" data-toggle="popover" data-trigger="hover" placement="top" title="Looking Out The Window" data-content="Get inspired by nature" onclick=inspirationGain(1)>Look out the window</button>
-		<br><br>
-		<button type="button" class="btn btn-success btn-lg" data-toggle="popover" data-trigger="hover" placement="top" title="Hum" data-content="Turn inspiration into notes" onclick=noteGain(1)>Hum</button>
-		<br><br>
-		<button type="button" class="btn btn-success btn-lg" data-toggle="popover" data-trigger="hover" placement="top" title="Speak" data-content="Let a word fall out of your mouth" onclick=lyricGain(1)>Speak</button>
-		<br><br>
-		<button type="button" class="btn btn-success btn-lg" data-toggle="popover" data-trigger="hover" placement="top" title="Write" data-content="Turn your effort into a song" onclick=songGain(1)>Write a Song</button>
-	</div>
-	</div>
-    <div id="Inspiration" class="tab-pane fade">
+    <div id="Inspiration" class="tab-pane fade in active">
 		<h2>Inspiration <small>The fuel for every aspiring artist.</small></h2>
 		<div class="container" align="center">
 		<button type="button" class="btn btn-success btn-lg" data-toggle="popover" data-trigger="hover" placement="top" title="Looking Out The Window" data-content="Get inspired by nature" onclick=inspirationGain(1)>Look out the window</button>
@@ -100,9 +87,10 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td></td>
-				<td><span id="">0</span></td>
-				<td><span id="">50</span></td>
+				<td><button type="button" class="btn btn-success btn-md" data-toggle="popover" data-trigger="hover" placement="top" title="Buy a Pitchpipe" data-content="Blow on a pitch pipe to constantly get a tone" onclick=buyPitchpipe()>Pitchpipe</button>
+				</td>
+				<td><span id="pitchpipe">0</span></td>
+				<td><span id="PitchpipeCost">50</span> Notes</td>
 			  </tr>
 			</tbody>
 		  </table>
@@ -124,9 +112,12 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td></td>
-				<td><span id="">0</span></td>
-				<td><span id="">25</span></td>
+				<tr>
+				<td><button type="button" class="btn btn-success btn-md" data-toggle="popover" data-trigger="hover" placement="top" title="Buy a Phrase" data-content="Think of a phrase to get more words" onclick=buyPhrase()>Phrase</button>
+				</td>
+				<td><span id="phrase">0</span></td>
+				<td><span id="PhraseCost">50</span> Lyrics</td>
+			  </tr>
 			  </tr>
 			</tbody>
 		  </table>
@@ -171,6 +162,8 @@
 	<div id="Information" class="tab-pane fade">
       <h2>Information <small>Stuff you might want to know</small></h2>
 	  <h3>Changelog</h3>
+	  <h4>Buildings (Alpha v.0.1.4)<small> March 10, 2016</small></h4>I finally figured out how to make buildings work. Woo!
+	  <h4>Reboot (Alpha v.0.1.4)<small> March 8, 2016</small></h4>Development starts back up again after being lazy for a forever.
 	  <h4>Taking Shape (Alpha v.0.1.3)<small> November 3, 2015</small></h4>Added tables for the soon-to-be buildings as well as information on the only current building.
 	  <h4>Animations (Alpha v.0.1.2)<small> October 31, 2015</small></h4>Added some animations on load up as well as notifications if you're trying to buy something too expensive.
 	  <h4>Basic Generation (Alpha v.0.1.1)<small> October 28, 2015</small></h4> Made an autogenerator for the inspiration tab to copy-paste to all the rest.
