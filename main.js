@@ -84,30 +84,71 @@ function buyStare(){
 	document.getElementById("StareCost").innerHTML = nextCost;
 };
 
+//MAIN GAIN FUNCTION
+
 window.setInterval(function(){
 	inspirationGain(stare);
+	noteGain(pitchpipe);
+	lyricGain(phrase);
 }, 1000)
+
+//note buildings
+
+var pitchpipe = 0;
+
+function buyPitchpipe(){
+	var PitchpipeCost = Math.floor(50 * Math.pow(1.15, pitchpipe));
+	if (note >= PitchpipeCost){
+		pitchpipe = pitchpipe + 1;
+		note = note - PitchpipeCost;
+		document.getElementById("pitchpipe").innerHTML = pitchpipe;
+		document.getElementById("note").innerHTML = note;
+	}
+	else{
+		$.notify({
+		// options
+		message: "<strong>Not enough Notes!</strong> You don't have enough notes to buy that." 
+		},{
+		// settings
+		type: 'danger',
+		animate: {
+		enter: 'animated fadeInRight',
+		exit: 'animated fadeOutRight'
+	}
+		});
+	};
+	var nextCost = Math.floor(50 * Math.pow(1.15, pitchpipe));
+	document.getElementById("PitchpipeCost").innerHTML = nextCost;
+};
 
 //lyric buildings
 
-var radio = 0;
+var phrase = 0;
 
-function buyRadio(){
-	var RadioCost = Math.floor(25 * Math.pow(1.2, radio));
-	if (lyric >= RadioCost){
-		radio = radio + 1;
-		lyric = lyric - RadioCost;
-		document.getElementById('radio').innerHTML = radio;
-		document.getElementById('lyric').innerHTML = lyric;
+function buyPhrase(){
+	var PhraseCost = Math.floor(50 * Math.pow(1.15, phrase));
+	if (lyric >= PhraseCost){
+		phrase = phrase + 1;
+		lyric = lyric - PhraseCost;
+		document.getElementById("phrase").innerHTML = phrase;
+		document.getElementById("lyric").innerHTML = lyric;
+	}
+	else{
+		$.notify({
+		// options
+		message: "<strong>Not enough Lyrics!</strong> You don't have enough lyrics to buy that." 
+		},{
+		// settings
+		type: 'danger',
+		animate: {
+		enter: 'animated fadeInRight',
+		exit: 'animated fadeOutRight'
+	}
+		});
 	};
-	var nextCost = Math.floor(25 * Math.pow(1.2, radio));
-	document.getElementById('RadioCost').innerHTML = nextCost;
+	var nextCost = Math.floor(50 * Math.pow(1.15, phrase));
+	document.getElementById("PhraseCost").innerHTML = nextCost;
 };
-
-window.setInterval(function(){
-	inspirationGain(radio);
-}, 1000)
-
 //auto-gain functions and gain interval
 
 function fanGain(){
