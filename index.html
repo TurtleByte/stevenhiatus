@@ -8,11 +8,14 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="http://bootstrap-notify.remabledesigns.com/js/bootstrap-notify.min.js"></script>
+	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 	<style type="text/css">
    body {background:#E4F4FA !important; }
    .table td {text-align:center;}
    .table th {text-align:center;}
    .table tbody tr td {vertical-align: middle;}
+   div.row a {color: inherit;}
 	</style>
 </head>
 
@@ -23,14 +26,13 @@
 </div>
 
 <div class="container">
-
-<div id="Currencies" class="row" align=center>
-	<div class="well well-sm col-sm-2"><h4>Inspiration<br><span id="inspiration">0</span></h4></div>
-	<div class="well well-sm col-sm-2"><h4>Notes<br><span id="note">0</span></h4></div>
-	<div class="well well-sm col-sm-2"><h4>Lyrics<br><span id="lyric">0</span></h4></div>
-	<div class="well well-sm col-sm-2"><h4>Songs<br><span id="song">0</span></h4></div>
-	<div class="well well-sm col-sm-2"><h4>Fans<br><span id="fan">0</span></h4></div>
-	<div class="well well-sm col-sm-2"><h4>Money<br><span id="money">0</span></h4></div>
+	<div id="Currencies" class="row" align=center>
+	<a data-toggle="tab" href="#Inspiration"><div class="well well-sm col-sm-2"><h4>Inspiration<br><span id="inspiration">0</span></h4></div></a>
+	<a data-toggle="tab" href="#Notes"><div id="CurrencyWell" class="well well-sm col-sm-2"><h4>Notes<br><span id="note">0</span></h4></div></a>
+	<a data-toggle="tab" href="#Lyrics"><div class="well well-sm col-sm-2"><h4>Lyrics<br><span id="lyric">0</span></h4></div></a>
+	<a data-toggle="tab" href="#Songs"><div class="well well-sm col-sm-2"><h4>Songs<br><span id="song">0</span></h4></div></a>
+	<a data-toggle="tab" href="#Fans"><div class="well well-sm col-sm-2"><h4>Fans<br><span id="fan">0</span></h4></div></a>
+	<a data-toggle="tab" href="#Money"><div class="well well-sm col-sm-2"><h4>Money<br><span id="money">0</span></h4></div></a>
 </div>
 
 <div id="Gameplay" class="container">
@@ -50,7 +52,7 @@
     <div id="Inspiration" class="tab-pane fade in active">
 		<h2>Inspiration <small>The fuel for every aspiring artist.</small></h2>
 		<div class="container" align="center">
-		<button type="button" class="btn btn-success btn-lg" data-toggle="popover" data-trigger="hover" placement="top" title="Looking Out The Window" data-content="Get inspired by nature" onclick=inspirationGain(1)>Look out the window</button>
+		<div type="button" class="btn btn-success btn-lg" data-toggle="popover" data-trigger="hover" placement="top" title="Looking Out The Window" data-content="Get inspired by nature" onclick=inspirationGain(1)>Look out the window</div>
 		</div>
 		<div class="container">   
 			<table class="table table-hover">
@@ -63,7 +65,8 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td><button type="button" class="btn btn-success btn-md" data-toggle="popover" data-trigger="hover" placement="top" title="Buy a Stare" data-content="Stare out the window to constantly get inspired" onclick=buyStare()>Stare</button>
+			  <tr>
+				<td><div type="button" class="btn btn-success btn-md" data-toggle="popover" data-trigger="hover" placement="top" title="Buy a Stare" data-content="Stare out the window to constantly get inspired" onclick=buyStare()>Stare</div>
 				</td>
 				<td><span id="stare">0</span></td>
 				<td><span id="StareCost">50</span> Inspiration</td>
@@ -75,7 +78,7 @@
     <div id="Notes" class="tab-pane fade">
 		<h2>Notes <small>The lifeblood of every musical piece.</small></h2>
 		<div class="container" align="center">
-		<button type="button" class="btn btn-success btn-lg" data-toggle="popover" data-trigger="hover" placement="top" title="Hum" data-content="Turn inspiration into notes" onclick=noteGain(1)>Hum</button>
+		<div type="button" class="btn btn-success btn-lg" data-toggle="popover" data-trigger="hover" placement="top" title="Hum" data-content="Turn inspiration into notes" onclick=noteGain(1)>Hum</div>
 		</div>
 		<div class="container">   
 			<table class="table table-hover">
@@ -88,7 +91,7 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td><button type="button" class="btn btn-success btn-md" data-toggle="popover" data-trigger="hover" placement="top" title="Buy a Pitchpipe" data-content="Blow on a pitch pipe to constantly get a tone" onclick=buyPitchpipe()>Pitchpipe</button>
+				<td><div type="button" class="btn btn-success btn-md" data-toggle="popover" data-trigger="hover" placement="top" title="Buy a Pitchpipe" data-content="Blow on a pitch pipe to constantly get a tone" onclick=buyPitchpipe()>Pitchpipe</div>
 				</td>
 				<td><span id="pitchpipe">0</span></td>
 				<td><span id="PitchpipeCost">50</span> Notes</td>
@@ -100,7 +103,7 @@
     <div id="Lyrics" class="tab-pane fade">
 		<h2>Lyrics <small>The verbal manifestation of humanity.</small></h2>
 		<div class="container" align="center">
-		<button type="button" class="btn btn-success btn-lg" data-toggle="popover" data-trigger="hover" placement="top" title="Speak" data-content="Let a word fall out of your mouth" onclick=lyricGain(1)>Speak</button>
+		<div type="button" class="btn btn-success btn-lg" data-toggle="popover" data-trigger="hover" placement="top" title="Speak" data-content="Let a word fall out of your mouth" onclick=lyricGain(1)>Speak</div>
 		</div>
 		<div class="container">   
 			<table class="table table-hover">
@@ -114,7 +117,7 @@
 			<tbody>
 			  <tr>
 				<tr>
-				<td><button type="button" class="btn btn-success btn-md" data-toggle="popover" data-trigger="hover" placement="top" title="Buy a Phrase" data-content="Think of a phrase to get more words" onclick=buyPhrase()>Phrase</button>
+				<td><div type="button" class="btn btn-success btn-md" data-toggle="popover" data-trigger="hover" placement="top" title="Buy a Phrase" data-content="Think of a phrase to get more words" onclick=buyPhrase()>Phrase</div>
 				</td>
 				<td><span id="phrase">0</span></td>
 				<td><span id="PhraseCost">50</span> Lyrics</td>
@@ -139,7 +142,7 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td><button type="button" class="btn btn-success btn-md" data-toggle="popover" data-trigger="hover" placement="top" title="Write" data-content="Turn your effort into a song" onclick=songGain(1)>Write a Song</button>
+				<td><div type="button" class="btn btn-success btn-md" data-toggle="popover" data-trigger="hover" placement="top" title="Write" data-content="Turn your effort into a song" onclick=songGain(1)>Write a Song</div>
 		</td>
 				<td><span id="song">0</span></td>
 				<td><span id="">200 Lyrics <br> 200 Notes</span></td>
@@ -163,6 +166,7 @@
 	<div id="Information" class="tab-pane fade">
       <h2>Information <small>Stuff you might want to know</small></h2>
 	  <h3>Changelog</h3>
+	  <h4>Math (Alpha v.0.1.5)<small> March 12, 2016</small></h4>Added some linking and stop/start conversion functionality.
 	  <h4>Buildings (Alpha v.0.1.4)<small> March 10, 2016</small></h4>I finally figured out how to make buildings work. Woo! And finally got rid of that pesky horizontal scrollbar thanks to <a href="https://www.reddit.com/user/tarnos12">/u/tarnos12</a>.
 	  <h4>Reboot (Alpha v.0.1.4)<small> March 8, 2016</small></h4>Development starts back up again after being lazy for a forever.
 	  <h4>Taking Shape (Alpha v.0.1.3)<small> November 3, 2015</small></h4>Added tables for the soon-to-be buildings as well as information on the only current building.
