@@ -11,6 +11,13 @@ $(function(){
 });
 })
 
+var originalContent = $('#CurrencyWell').html();
+$("#CurrencyWell").hover(function(){
+        $(this).html(originalContent + '<div type="button" class="btn btn-danger btn-md" title="Stop" data-content="Stop Note Conversion" onclick=stopNote()>Stop</div><div type="button" class="btn btn-success btn-md" title="Start" data-content="Start Note Conversion" onclick=startNote()>Start</div>');
+		}, function(){
+        $(this).html(originalContent);
+    });
+
 //currency variables
 var note = 0;
 var lyric = 0;
@@ -88,9 +95,19 @@ function buyStare(){
 
 window.setInterval(function(){
 	inspirationGain(stare);
-	noteGain(pitchpipe);
 	lyricGain(phrase);
+	noteGain(noteGainValue);
 }, 1000)
+
+var noteGainValue = 0;
+
+function startNote(){
+	noteGainValue = pitchpipe;
+}
+
+function stopNote(){
+	noteGainValue = 0;
+}
 
 //note buildings
 
