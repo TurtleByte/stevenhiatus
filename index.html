@@ -11,11 +11,14 @@
 	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
 	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 	<style type="text/css">
+	a{text-decoration: none !important;}
    body {background:#E4F4FA !important; }
    .table td {text-align:center;}
    .table th {text-align:center;}
    .table tbody tr td {vertical-align: middle;}
    div.row a {color: inherit;}
+   #NoteWell div {display: none;}
+   #LyricWell div {display: none;}
 	</style>
 </head>
 
@@ -28,8 +31,14 @@
 <div class="container">
 	<div id="Currencies" class="row" align=center>
 	<a data-toggle="tab" href="#Inspiration"><div class="well well-sm col-sm-2"><h4>Inspiration<br><span id="inspiration">0</span></h4></div></a>
-	<a data-toggle="tab" href="#Notes"><div id="CurrencyWell" class="well well-sm col-sm-2"><h4>Notes<br><span id="note">0</span></h4></div></a>
-	<a data-toggle="tab" href="#Lyrics"><div class="well well-sm col-sm-2"><h4>Lyrics<br><span id="lyric">0</span></h4></div></a>
+	<a data-toggle="tab" href="#Notes"><div id="NoteWell" class="well well-sm col-sm-2"><h4>Notes<br><span id="note">0</span></h4></a>
+		<div type="button" class="btn btn-danger btn-md" title="Stop" onclick=stopNote()>Stop</div>
+		<div type="button" class="btn btn-success btn-md" title="Start" onclick=startNote()>Start</div>
+		</div>
+	<a data-toggle="tab" href="#Lyrics"><div id="LyricWell" class="well well-sm col-sm-2"><h4>Lyrics<br><span id="lyric">0</span></h4></a>
+		<div type="button" class="btn btn-danger btn-md" title="Stop" onclick=stopLyric()>Stop</div>
+		<div type="button" class="btn btn-success btn-md" title="Start" onclick=startLyric()>Start</div>
+		</div>
 	<a data-toggle="tab" href="#Songs"><div class="well well-sm col-sm-2"><h4>Songs<br><span id="song">0</span></h4></div></a>
 	<a data-toggle="tab" href="#Fans"><div class="well well-sm col-sm-2"><h4>Fans<br><span id="fan">0</span></h4></div></a>
 	<a data-toggle="tab" href="#Money"><div class="well well-sm col-sm-2"><h4>Money<br><span id="money">0</span></h4></div></a>
@@ -166,6 +175,7 @@
 	<div id="Information" class="tab-pane fade">
       <h2>Information <small>Stuff you might want to know</small></h2>
 	  <h3>Changelog</h3>
+	  <h4>Progressless (Alpha v.0.1.6)<small> March 13, 2016</small></h4>Added the smoothness of the stop/start buttons. They work now. Maybe.
 	  <h4>Math (Alpha v.0.1.5)<small> March 12, 2016</small></h4>Added some linking and stop/start conversion functionality.
 	  <h4>Buildings (Alpha v.0.1.4)<small> March 10, 2016</small></h4>I finally figured out how to make buildings work. Woo! And finally got rid of that pesky horizontal scrollbar thanks to <a href="https://www.reddit.com/user/tarnos12">/u/tarnos12</a>.
 	  <h4>Reboot (Alpha v.0.1.4)<small> March 8, 2016</small></h4>Development starts back up again after being lazy for a forever.
