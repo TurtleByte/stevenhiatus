@@ -11,13 +11,18 @@ $(function(){
 });
 })
 
-var originalContent = $('#CurrencyWell').html();
-$("#CurrencyWell").hover(function(){
-        $(this).html(originalContent + '<div type="button" class="btn btn-danger btn-md" title="Stop" data-content="Stop Note Conversion" onclick=stopNote()>Stop</div><div type="button" class="btn btn-success btn-md" title="Start" data-content="Start Note Conversion" onclick=startNote()>Start</div>');
-		}, function(){
-        $(this).html(originalContent);
-    });
+$("#NoteWell").hover(function() {
+  $(this).find('div').slideDown();
+}, function() {
+  $(this).find('div').slideUp();
+});
 
+$("#LyricWell").hover(function() {
+  $(this).find('div').slideDown();
+}, function() {
+  $(this).find('div').slideUp();
+});
+	
 //currency variables
 var note = 0;
 var lyric = 0;
@@ -26,7 +31,12 @@ var song = 0;
 var fan = 0;
 var money = 0;
 
-//gain functions
+//building variables
+var stare = 0;
+var pitchpipe = 0;
+var phrase = 0;
+
+//basic gain functions
 
 function inspirationGain(number){
 	inspiration = inspiration + number
@@ -64,8 +74,6 @@ function songGain(number){
 
 //inspiration buildings
 
-var stare = 0;
-
 function buyStare(){
 	var StareCost = Math.floor(50 * Math.pow(1.15, stare));
 	if (inspiration >= StareCost){
@@ -91,33 +99,23 @@ function buyStare(){
 	document.getElementById("StareCost").innerHTML = nextCost;
 };
 
-//MAIN GAIN FUNCTION
+//note stuff
 
-window.setInterval(function(){
-	inspirationGain(stare);
-	lyricGain(phrase);
-	noteGain(noteGainValue);
-}, 1000)
-
-var noteGainValue = 0;
+var noteGainValue = pitchpipe;
 
 function startNote(){
 	noteGainValue = pitchpipe;
 }
-
 function stopNote(){
 	noteGainValue = 0;
 }
-
-//note buildings
-
-var pitchpipe = 0;
 
 function buyPitchpipe(){
 	var PitchpipeCost = Math.floor(50 * Math.pow(1.15, pitchpipe));
 	if (note >= PitchpipeCost){
 		pitchpipe = pitchpipe + 1;
 		note = note - PitchpipeCost;
+		noteGainValue = pitchpipe;
 		document.getElementById("pitchpipe").innerHTML = pitchpipe;
 		document.getElementById("note").innerHTML = note;
 	}
@@ -140,13 +138,21 @@ function buyPitchpipe(){
 
 //lyric buildings
 
-var phrase = 0;
+var lyricGainValue = phrase;
+
+function startLyric(){
+	lyricGainValue = phrase;
+}
+function stopLyric(){
+	lyricGainValue = 0;
+}
 
 function buyPhrase(){
 	var PhraseCost = Math.floor(50 * Math.pow(1.15, phrase));
 	if (lyric >= PhraseCost){
 		phrase = phrase + 1;
 		lyric = lyric - PhraseCost;
+		lyricGainValue = phrase;
 		document.getElementById("phrase").innerHTML = phrase;
 		document.getElementById("lyric").innerHTML = lyric;
 	}
@@ -166,7 +172,8 @@ function buyPhrase(){
 	var nextCost = Math.floor(50 * Math.pow(1.15, phrase));
 	document.getElementById("PhraseCost").innerHTML = nextCost;
 };
-//auto-gain functions and gain interval
+
+//money and fan functions and gain interval
 
 function fanGain(){
 	if (song >= 1){
@@ -190,3 +197,11 @@ function moneyGain(){
 window.setInterval(function(){
 	moneyGain();
 }, 5000)
+
+//AUTO GAIN FUNCTION
+
+window.setInterval(function(){
+	inspirationGain(stare);
+	lyricGain(lyricGainValue);
+	noteGain(noteGainValue);
+}, 1000)
