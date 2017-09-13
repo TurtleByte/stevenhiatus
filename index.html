@@ -3,7 +3,7 @@
 	<title>SU Hiatus Count</title>
 	<style type="text/css">
 	div {
-	font-family: "crewniverse_font";
+	font-family: "Crewniverse";
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -11,7 +11,7 @@
 	text-align: center;
 	}
 	body {
-    background-image: url("21.png");
+    background-image: url("https://i.imgur.com/2YVxQil.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     }
@@ -29,11 +29,18 @@
 <body>
     <div>
         <h1>It has been</h1>
-		<h1 style="font-size:900%">106</h1>
+		<h1 style="font-size:900%"><span id="diffDays">0</span></h1>
 		<h1>Days since the premiere of Lars' Head</h1>
     </div>
+	<script type="text/javascript">
+	var oneDay = 24*60*60*1000;
+	var firstDate = new Date();
+	var secondDate = new Date("2017-05-30T00:00:00Z");
+
+	var diffDays = Math.floor(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+	document.getElementById("diffDays").innerHTML = diffDays;
+	</script>	
 </body>
 
-<script type="text/javascript" src="main.js"></script>	
 </body>
 </html>
