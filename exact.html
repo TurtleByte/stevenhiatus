@@ -316,17 +316,27 @@ you can perhaps <a href="https://www.reddit.com/r/stevenuniverse/"> join the sub
 
 	function count(){
 	var firstDate = new Date();
-	var diffDays = Math.floor(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
-	var diffHours = Math.floor(24*(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)) - diffDays));
-	var diffMinutes = Math.floor(60*(24*(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)) - diffDays) - diffHours));
-	var diffSeconds = Math.floor(60*(60*(24*(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)) - diffDays) - diffHours) - diffMinutes));
+	
+	//Calculates each portion of time
+	var diffDays = (firstDate.getTime() - secondDate.getTime()) / oneDay;
+	var diffHours = (diffDays - Math.floor(diffDays)) * 24;
+	var diffMinutes = (diffHours - Math.floor(diffHours)) * 60;
+	var diffSeconds = (diffMinutes - Math.floor(diffMinutes)) * 60;
+	
+	//Removes all decimal places in each portion
+	diffDays = Math.floor(diffDays);
+	diffHours = Math.floor(diffHours);
+	diffMinutes = Math.floor(diffMinutes);
+	diffSeconds = Math.floor(diffSeconds);
 	var diffDays1 = diffDays;
 	var diffDays2 = diffDays1;
 	
+	//Updates page
 	document.getElementById("diffDays").innerHTML = diffDays;
 	document.getElementById("diffHours").innerHTML = diffHours;
 	document.getElementById("diffMinutes").innerHTML = diffMinutes;
 	document.getElementById("diffSeconds").innerHTML = diffSeconds;
+	
 	// Don't judge me. I'm too lazy to learn jQuery
 	document.getElementById("diffDays1").innerHTML = diffDays1;
 	document.getElementById("diffDays2").innerHTML = diffDays2;
@@ -334,7 +344,7 @@ you can perhaps <a href="https://www.reddit.com/r/stevenuniverse/"> join the sub
 	
 	window.setInterval(function(){
 		count();
-	}, 1000);
+	}, 500);
 	
 	</script>
 </body>
