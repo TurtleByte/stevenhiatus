@@ -1,0 +1,47 @@
+	div{
+	font-family: "Crewniverse";
+	text-align: center;
+	}
+	.count {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	}
+	.head {
+	font-size: 110%;
+	}
+	.tab {
+	position: relative;
+	transform: translate(0%, 110%);
+	width: 100%;
+	height: 100%;
+	}
+	body {
+    background-image: url("21.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+    }
+	table {
+    border-collapse: collapse;
+	}
+	td {
+	padding: 3px;
+	text-align: center;
+	border: 1px solid black;
+	padding: 4px;
+	}
+	a {
+    text-decoration: none;
+	}
+	@font-face {
+    font-family: crewniverse_font;
+    src: url('crewniverse_font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+	}
+	td {
+	font-size:95%;
+	}
