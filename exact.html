@@ -1,52 +1,7 @@
 <html lang="en">
 <head>
 	<title>The Silence of Steven</title>
-	<style type="text/css">
-	div{
-	font-family: "Crewniverse";
-	text-align: center;
-	}
-	.count {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 90%;
-	}
-	.head {
-	font-size: 110%;
-	}
-	.tab {
-	position: relative;
-	transform: translate(0%, 110%);
-	width: 100%;
-	height: 100%;
-	}
-	body {
-    background-image: url("21.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-	background-attachment: fixed;
-    }
-	table {
-    border-collapse: collapse;
-	}
-	td {
-	padding: 3px;
-	text-align: center;
-	border: 1px solid black;
-	padding: 4px;
-	}
-	a {
-    text-decoration: none;
-	}
-	@font-face {
-    font-family: crewniverse_font;
-    src: url('crewniverse_font.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-	}
-</style>
+	  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
@@ -234,7 +189,7 @@
     <td><span id="diffDays1">xxx</span></td>
     <td>???</td>
     <td><span id="diffDays2">xxx</span></td>
-    <td>And counting...</td>
+    <td>[Still ongoing]</td>
   </tr>
 </table>
 <br>
@@ -245,11 +200,6 @@
     <td class="head">Day Number</td>
 	<td class="head">Date Achievable</td>
 	<td class="head">Description</td>
-	</tr>
-	<tr>
-    	<td>126</td>
-	<td>02 Oct 2017</td>
-	<td>New Record for Longest SU Hiatus</td>
 	</tr>
 	<tr>
     	<td>132</td>
@@ -303,44 +253,12 @@ you can perhaps <a href="https://www.reddit.com/r/stevenuniverse/"> join the sub
 	Isn't it?
 	<br>
 	Isn't it over?
+	<br><br>
+	You won
+	And she chose you.
 </h3>
 </div>
 <br><br>
-	<script type="text/javascript">
-	var oneDay = 24*60*60*1000;
-	var secondDate = new Date("2017-05-30T00:00:00Z");
-
-	function count(){
-	var firstDate = new Date();
-	
-	//Calculates each portion of time
-	var diffDays = (firstDate.getTime() - secondDate.getTime()) / oneDay;
-	var diffHours = (diffDays - Math.floor(diffDays)) * 24;
-	var diffMinutes = (diffHours - Math.floor(diffHours)) * 60;
-	var diffSeconds = (diffMinutes - Math.floor(diffMinutes)) * 60;
-	
-	//Removes all decimal places in each portion
-	diffDays = Math.floor(diffDays);
-	diffHours = Math.floor(diffHours);
-	diffMinutes = Math.floor(diffMinutes);
-	diffSeconds = Math.floor(diffSeconds);
-	var diffDays1 = diffDays;
-	var diffDays2 = diffDays1;
-	
-	//Updates page
-	document.getElementById("diffDays").innerHTML = diffDays;
-	document.getElementById("diffHours").innerHTML = diffHours;
-	document.getElementById("diffMinutes").innerHTML = diffMinutes;
-	document.getElementById("diffSeconds").innerHTML = diffSeconds;
-	
-	// Don't judge me. I'm too lazy to learn jQuery
-	document.getElementById("diffDays1").innerHTML = diffDays1;
-	document.getElementById("diffDays2").innerHTML = diffDays2;
-	};
-	
-	window.setInterval(function(){
-		count();
-	}, 500);
-	</script>
+	<script type="text/javascript" src="script.js"> </script>
 </body>
 </html>
