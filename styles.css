@@ -19,13 +19,13 @@
 	height: 100%;
 	}
 	body {
-	background-image: url("21.png");
-	background-size: cover;
-	background-repeat: no-repeat;
+    background-image: url("21.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 	background-attachment: fixed;
     }
 	table {
-	border-collapse: collapse;
+    border-collapse: collapse;
 	}
 	td {
 	padding: 3px;
@@ -34,14 +34,20 @@
 	padding: 4px;
 	}
 	a {
-	text-decoration: none;
+    text-decoration: none;
 	}
 	@font-face {
-    	font-family: Crewniverse;
-    	src: url('crewniverse_font.ttf') format('truetype');
-    	font-weight: normal;
-    	font-style: normal;
+    font-family: Crewniverse;
+    src: url('crewniverse_font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 	}
 	td {
 	font-size:95%;
+	}
+	hr{
+	border: none;
+	background-color: black;
+	height: 5px;
+	width: 80%;
 	}
