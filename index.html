@@ -1,4 +1,4 @@
-<html lang="en">
+<html>
 <head>
 	<title>The Silence of Steven</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
@@ -182,13 +182,20 @@
     <td>29 May 2017</td>
     <td>???</td>
     <td>???</td>
-    <td><span id="diffDays1">xxx</span></td>
+    <td><span id="diffDays0">xxx</span></td>
     <td>???</td>
-    <td><span id="diffDays2">xxx</span></td>
-    <td>And counting...</td>
+    <td><span id="diffDays1">xxx</span></td>
+    <td>[Still ongoing]</td>
   </tr>
 </table>
 <br>
+<hr>
+	<h1>Time To Next Milestone</h1>
+	<h1 style="font-size:400%">
+	<span id="diffDays2">xxx</span>
+	<h2>Release of The Smothering</h2>
+	<hr>
+	
 <h1> Upcoming Hiatus Milestones </h1>
 <table border="1" align="center">
 <tbody>
@@ -198,32 +205,47 @@
 	<td class="head">Description</td>
 	</tr>
 	<tr>
+    	<td>128</td>
+		<td>04 Oct 2017</td>
+		<td>Release of Fan-Made Episode "The Smothering"</td>
+	</tr>
+	<tr>
     	<td>132</td>
-	<td>08 Oct 2017</td>
-	<td>An Episode A Day SU Marathon would have finished</td>
+		<td>08 Oct 2017</td>
+		<td>An Episode A Day SU Marathon would have finished</td>
+	</tr>
+	<tr>
+    	<td>145</td>
+		<td>21 Oct 2017</td>
+		<td>One Month Since Podcast Ended</td>
 	</tr>
 	<tr>
     	<td>150</td>
-	<td>26 Oct 2017</td>
-	<td>Arbitrary Round Number</td>
+		<td>26 Oct 2017</td>
+		<td>Arbitrary Round Number</td>
 	</tr>
 	<tr>
     	<td>153</td>
-	<td>29 Oct 2017</td>
-	<td>Five Months since Lars' Head Premiere</td>
+		<td>29 Oct 2017</td>
+		<td>Five Months since Lars' Head Premiere</td>
+	</tr>
+	<tr>
+    	<td>176</td>
+		<td>21 Nov 2017</td>
+		<td>Two Months Since Podcast Ended</td>
 	</tr>
 	<tr>
     	<td>184</td>
-	<td>29 Nov 2017</td>
-	<td>Six Months since Lars' Head Premiere</td>
+		<td>29 Nov 2017</td>
+		<td>Six Months since Lars' Head Premiere</td>
 	</tr>
-	<td>200</td>
-	<td>15 Dec 2017</td>
-	<td>Arbitrary Round Number</td>
+		<td>200</td>
+		<td>15 Dec 2017</td>
+		<td>Arbitrary Round Number</td>
 	</tr>
 </tbody>
 </table>
-<br>
+<hr>
 <p>
 Thanks to Kram of the Steven Universe Discord for <a href="https://docs.google.com/spreadsheets/d/17mfOXrY2_JiihWCPp1k7yFORXyv2iRo_GbVAz8BWEGw/edit?usp=sharing"> this wonderful table of the hiatuses.</a>
 If you want to get more intimate with the numbers, there's more information on Kram's table so go check it out!
@@ -250,26 +272,37 @@ you can perhaps <a href="https://www.reddit.com/r/stevenuniverse/"> join the sub
 	<br>
 	Isn't it over?
 	<br><br>
-	You won
-	And she chose you.
+	You won,
+	<br>
+	And she chose you,
 </h3>
 </div>
-
-
-<br><br>
-
 	<script type="text/javascript">
 	var oneDay = 24*60*60*1000;
 	var firstDate = new Date();
 	var secondDate = new Date("2017-05-30T00:00:00Z");
+	var thirdDate = new Date("2017-10-04T20:30:00Z");
 
 	var diffDays = Math.floor(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+	var diffDays0 = diffDays;
 	var diffDays1 = diffDays;
-	var diffDays2 = diffDays1;
+	var diffDays2 = Math.floor(Math.abs((thirdDate.getTime() - firstDate.getTime())/(oneDay)));
+	
 	// Don't judge me. I'm too lazy to learn jQuery
 	document.getElementById("diffDays").innerHTML = diffDays;
+	document.getElementById("diffDays0").innerHTML = diffDays0;
 	document.getElementById("diffDays1").innerHTML = diffDays1;
-	document.getElementById("diffDays2").innerHTML = diffDays2;
+	
+	if (firstDate > thirdDate){
+		document.getElementById("diffDays2").innerHTML = "It's Over, Isn't It?";
+	}
+	else if (diffDays2 = 1){
+		document.getElementById("diffDays2").innerHTML = diffDays2 + " Day";
+	} else {
+		document.getElementById("diffDays2").innerHTML = diffDays2 + " Days"
+	};
+	
 	</script>
+
 </body>
 </html>
