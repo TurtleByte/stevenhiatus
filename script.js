@@ -20,10 +20,7 @@
 	var diffDays1 = diffDays0;
 	
 	//Update page
-	document.getElementById("diffDays").innerHTML = diffDays;
-	document.getElementById("diffHours").innerHTML = diffHours;
-	document.getElementById("diffMinutes").innerHTML = diffMinutes;
-	document.getElementById("diffSeconds").innerHTML = diffSeconds;
+	document.getElementById("count").innerHTML = diffDays + "d : " + diffHours + "h : " + diffMinutes + "m : " + diffSeconds + "s";
 	
 	// Don't judge me. I'm too lazy to learn jQuery
 	document.getElementById("diffDays0").innerHTML = diffDays0;
@@ -40,11 +37,13 @@
 	diffHours2 = Math.floor(diffHours2);
 	diffMinutes2 = Math.floor(diffMinutes2);
 	diffSeconds2 = Math.floor(diffSeconds2);
-		
-	document.getElementById("diffDays2").innerHTML = diffDays2;
-	document.getElementById("diffHours2").innerHTML = diffHours2;
-	document.getElementById("diffMinutes2").innerHTML = diffMinutes2;
-	document.getElementById("diffSeconds2").innerHTML = diffSeconds2;
+	
+	if (thirdDate > firstDate ){
+		document.getElementById("count2").innerHTML = diffDays2 + "d : " + diffHours2 + "h : " + diffMinutes2 + "m : " + diffSeconds2 + "s";
+	} else {
+		document.getElementById("count2").innerHTML = "0d : 0m : 0h : 0s";
+	}
+	
 	};
 		
 	window.setInterval(function(){
