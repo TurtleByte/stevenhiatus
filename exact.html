@@ -1,19 +1,20 @@
-<html>
+<html lang="en">
 <head>
 	<title>The Silence of Steven</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
     <div class="count">
         <h1>It has been</h1>
-		<h1 style="font-size:900%"><span id="diffDays">xxx</span> DAYS</h1>
-		<h1>since the premiere of Lars' Head</h1>
+		<h1 style="font-size:600%">
+		<span id="count">xxx</span></h1>
+		<h1>since the premiere of Lars' Head.</h1>
 	</div>
-
+	
 <div class="tab">
 	<p style="font-size:150%">
-	If you want more precision in measuring your insanity down to the seconds, you can find an alternate version of this site <a href="exact.html"> by clicking right here. </a>
+	If you want a less precise measure of your depravity, you can find an alternate version of this site <a href="index.html"> by clicking right here. </a>
 	</p>
 <br>
 <h1> The Grand List of Hiatuses </h1>
@@ -190,7 +191,7 @@
 <hr>
 	<h1>Time To Next Milestone</h1>
 	<h1 style="font-size:400%">
-	<span id="diffDays2">xxx</span>
+	<span id="count2">xxx</h1>
 	<h2>2017 New York Comic Con Steven Universe Panel</h2>
 	<hr>
 	
@@ -206,6 +207,7 @@
     	<td>129</td>
 		<td>05 Oct 2017</td>
 		<td>2017 NYCC Steven Universe Panel</td>
+		<!--The time for this will be 2017-10-05T14:30:00Z-->
 	</tr>
 	<tr>
     	<td>132</td>
@@ -281,32 +283,7 @@ you can perhaps <a href="https://www.reddit.com/r/stevenuniverse/"> join the sub
 	And she loved you.
 </h5>
 </div>
-	<script type="text/javascript">
-	var oneDay = 24*60*60*1000;
-	var firstDate = new Date();
-	var secondDate = new Date("2017-05-30T00:00:00Z");
-	var thirdDate = new Date("2017-10-05T14:30:00Z");
-
-	var diffDays = Math.floor(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
-	var diffDays0 = diffDays;
-	var diffDays1 = diffDays;
-	var diffDays2 = Math.floor(Math.abs((thirdDate.getTime() - firstDate.getTime())/(oneDay)));
-	
-	// Don't judge me. I'm too lazy to learn jQuery
-	document.getElementById("diffDays").innerHTML = diffDays;
-	document.getElementById("diffDays0").innerHTML = diffDays0;
-	document.getElementById("diffDays1").innerHTML = diffDays1;
-	
-	if (firstDate > thirdDate){
-		document.getElementById("diffDays2").innerHTML = "It's Over, Isn't It?";
-	}
-	else if (diffDays2 == 1){
-		document.getElementById("diffDays2").innerHTML = diffDays2 + " Day";
-	} else {
-		document.getElementById("diffDays2").innerHTML = diffDays2 + " Days"
-	};
-	
-	</script>
-
+<br><br>
+	<script type="text/javascript" src="script.js"> </script>
 </body>
 </html>
