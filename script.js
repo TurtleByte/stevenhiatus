@@ -1,6 +1,6 @@
 	var oneDay = 24*60*60*1000;
 	var secondDate = new Date("2017-05-30T00:00:00Z");
-	var thirdDate = new Date("2017-10-05T14:30:00Z");
+	var thirdDate = new Date("2017-10-08T00:00:00Z");
 	
 	function count(){
 	var firstDate = new Date();
@@ -41,7 +41,7 @@
 	if (thirdDate > firstDate ){
 		document.getElementById("count2").innerHTML = diffDays2 + "d : " + diffHours2 + "h : " + diffMinutes2 + "m : " + diffSeconds2 + "s";
 	} else {
-		document.getElementById("count2").innerHTML = "0d : 0m : 0h : 0s";
+		document.getElementById("count2").innerHTML = "It's Over, Isn't It?";
 	}
 	
 	};
