@@ -294,9 +294,10 @@ or, you can perhaps <a href="https://www.reddit.com/r/stevenuniverse/"> join the
 	
 	if (firstDate > thirdDate){
 		document.getElementById("diffDays2").innerHTML = "It's Over, Isn't It?";
-	}
-	else if (diffDays2 == 1){
+	} else if (diffDays2 == 1){
 		document.getElementById("diffDays2").innerHTML = diffDays2 + " Day";
+	} else if (diffDays2 == 0){
+		document.getElementById("diffDays2").innerHTML = "Less than a Day";
 	} else {
 		document.getElementById("diffDays2").innerHTML = diffDays2 + " Days"
 	};
