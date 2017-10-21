@@ -1,6 +1,6 @@
 	var oneDay = 24*60*60*1000;
 	var secondDate = new Date("2017-05-30T00:00:00Z");
-	var thirdDate = new Date("2017-10-21T00:00:00Z");
+	var thirdDate = new Date("2017-10-26T00:00:00Z");
 	
 	function count(){
 	var firstDate = new Date();
