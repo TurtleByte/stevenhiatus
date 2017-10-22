@@ -1,6 +1,7 @@
 	var oneDay = 24*60*60*1000;
 	var secondDate = new Date("2017-05-30T00:00:00Z");
 	var thirdDate = new Date("2017-10-26T00:00:00Z");
+	var fourthDate = new Date("2017-10-21T00:00:00Z");
 	
 	function count(){
 	var firstDate = new Date();
@@ -44,6 +45,23 @@
 		document.getElementById("count2").innerHTML = "It's Over, Isn't It?";
 	}
 	
+	//wow look, a count up. you'd think i'd do this more efficiently
+	
+	var diffDays3 = (firstDate.getTime() - fourthDate.getTime()) / oneDay;
+	var diffHours3 = (diffDays3 - Math.floor(diffDays3)) * 24;
+	var diffMinutes3 = (diffHours3 - Math.floor(diffHours3)) * 60;
+	var diffSeconds3 = (diffMinutes3 - Math.floor(diffMinutes3)) * 60;
+	
+	//Removes all decimal places in each portion
+	diffDays3 = Math.floor(diffDays3);
+	diffHours3 = Math.floor(diffHours3);
+	diffMinutes3 = Math.floor(diffMinutes3);
+	diffSeconds3 = Math.floor(diffSeconds3);
+	
+	//Update page
+	document.getElementById("count3").innerHTML = diffDays3 + "d : " + diffHours3 + "h : " + diffMinutes3 + "m : " + diffSeconds3 + "s";
+	document.getElementById("nextMilestone").innerHTML = "Steven Universe Podcast Season 2 Premiere Day";
+	document.getElementById("lastMilestone").innerHTML = "One Month Since Steven Universe Podcast Season 1 Finale";	
 	};
 		
 	window.setInterval(function(){
