@@ -1,7 +1,7 @@
 	var oneDay = 24*60*60*1000;
 	var secondDate = new Date("2017-05-30T00:00:00Z");
-	var thirdDate = new Date("2017-10-26T00:00:00Z");
-	var fourthDate = new Date("2017-10-21T00:00:00Z");
+	var thirdDate = new Date("2017-10-29T00:00:00Z");
+	var fourthDate = new Date("2017-10-26T11:42:00Z");
 	
 	function count(){
 	var firstDate = new Date();
@@ -60,8 +60,8 @@
 	
 	//Update page
 	document.getElementById("count3").innerHTML = diffDays3 + "d : " + diffHours3 + "h : " + diffMinutes3 + "m : " + diffSeconds3 + "s";
-	document.getElementById("nextMilestone").innerHTML = "Steven Universe Podcast Season 2 Premiere Day";
-	document.getElementById("lastMilestone").innerHTML = "One Month Since Steven Universe Podcast Season 1 Finale";	
+	document.getElementById("nextMilestone").innerHTML = "Five Months since Lars' Head Premiere";
+	document.getElementById("lastMilestone").innerHTML = "Steven Universe Podcast Season 2 Premiere";	
 	};
 		
 	window.setInterval(function(){

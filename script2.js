@@ -1,8 +1,8 @@
 var oneDay = 24*60*60*1000;
 var firstDate = new Date();
 var secondDate = new Date("2017-05-30T00:00:00Z");
-var thirdDate = new Date("2017-10-26T00:00:00Z");
-var fourthDate = new Date("2017-10-21T00:00:00Z");
+var thirdDate = new Date("2017-10-29T00:00:00Z");
+var fourthDate = new Date("2017-10-26T11:42:00Z");
 	
 
 var diffDays = Math.floor(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
@@ -16,8 +16,8 @@ document.getElementById("diffDays").innerHTML = diffDays + " Days";
 document.getElementById("diffDays0").innerHTML = diffDays0;
 document.getElementById("diffDays1").innerHTML = diffDays1;
 document.getElementById("diffDays3").innerHTML = diffDays3 + " Days";
-document.getElementById("nextMilestone").innerHTML = "Steven Universe Podcast Season 2 Premiere Day";
-document.getElementById("lastMilestone").innerHTML = "One Month Since Steven Universe Podcast Season 1 Finale";
+document.getElementById("nextMilestone").innerHTML = "Five Months since Lars' Head Premiere";
+document.getElementById("lastMilestone").innerHTML = "Steven Universe Podcast Season 2 Premiere";
 
 
 if (firstDate > thirdDate){
