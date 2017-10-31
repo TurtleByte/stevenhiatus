@@ -1,7 +1,6 @@
 	var oneDay = 24*60*60*1000;
 	var secondDate = new Date("2017-05-30T00:00:00Z");
-	var thirdDate = new Date("2017-10-31T00:00:00Z");
-	var fourthDate = new Date("2017-10-29T00:00:00Z");
+	var thirdDate = new Date("2017-11-10T00:00:00Z");
 	
 	function count(){
 	var firstDate = new Date();
@@ -17,15 +16,10 @@
 	diffHours = Math.floor(diffHours);
 	diffMinutes = Math.floor(diffMinutes);
 	diffSeconds = Math.floor(diffSeconds);
-	var diffDays0 = diffDays;
-	var diffDays1 = diffDays0;
 	
 	//Update page
 	document.getElementById("count").innerHTML = diffDays + "d : " + diffHours + "h : " + diffMinutes + "m : " + diffSeconds + "s";
-	
-	// Don't judge me. I'm too lazy to learn jQuery
-	document.getElementById("diffDays0").innerHTML = diffDays0;
-	document.getElementById("diffDays1").innerHTML = diffDays1;
+
 	
 	//the rest is for the countdown, it's a copy of the above
 	
@@ -60,8 +54,6 @@
 	
 	//Update page
 	document.getElementById("count3").innerHTML = diffDays3 + "d : " + diffHours3 + "h : " + diffMinutes3 + "m : " + diffSeconds3 + "s";
-	document.getElementById("nextMilestone").innerHTML = "Launch of Save The Light on the PlayStation 4";
-	document.getElementById("lastMilestone").innerHTML = "Five Months Since Premiere of Lars Head";	
 	};
 		
 	window.setInterval(function(){
