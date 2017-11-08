@@ -12,7 +12,7 @@ document.getElementById("diffDays").innerHTML = diffDays + " Days";
 
 
 if (firstDate > thirdDate){
-	document.getElementById("diffDays2").innerHTML = "Are You Ready For A Miracle";
+	document.getElementById("diffDays2").innerHTML = "Dewey Wins!";
 } else if (diffDays2 == 1){
 	document.getElementById("diffDays2").innerHTML = diffDays2 + " Day";
 } else if (diffDays2 == 0){

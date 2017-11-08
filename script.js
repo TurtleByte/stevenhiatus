@@ -36,7 +36,7 @@
 	if (thirdDate > firstDate ){
 		document.getElementById("count2").innerHTML = diffDays2 + "d : " + diffHours2 + "h : " + diffMinutes2 + "m : " + diffSeconds2 + "s";
 	} else {
-		document.getElementById("count2").innerHTML = "It's Over, Isn't It?";
+		document.getElementById("count2").innerHTML = "Dewey Wins!";
 	}
 	
 	//wow look, a count up. you'd think i'd do this more efficiently
