@@ -1,5 +1,5 @@
 	var oneDay = 24*60*60*1000;
-	var secondDate = new Date("2017-11-10T06:07:30Z");
+	var secondDate = new Date("2017-11-10T05:38:42Z");
 	var thirdDate = new Date("2017-11-10T23:00:00Z");
 	
 	function count(){
