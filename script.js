@@ -1,5 +1,5 @@
 	var oneDay = 24*60*60*1000;
-	var secondDate = new Date("2017-05-30T00:00:00Z");
+	var secondDate = new Date("2017-11-10T06:07:30Z");
 	var thirdDate = new Date("2017-11-10T23:00:00Z");
 	
 	function count(){
@@ -17,7 +17,12 @@
 	diffMinutes = Math.floor(diffMinutes);
 	diffSeconds = Math.floor(diffSeconds);
 	
+	diffDays1 = diffDays;
+	diffDays2 = diffDays1;
+	
 	//Update page
+	document.getElementById("diffDays1").innerHTML = diffDays1;
+	document.getElementById("diffDays2").innerHTML = diffDays2;
 	document.getElementById("count").innerHTML = diffDays + "d : " + diffHours + "h : " + diffMinutes + "m : " + diffSeconds + "s";
 
 	
