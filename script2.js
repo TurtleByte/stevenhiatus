@@ -1,7 +1,7 @@
 var oneDay = 24*60*60*1000;
 var firstDate = new Date();
 var secondDate = new Date("2017-11-10T05:38:42Z");
-var thirdDate = new Date("2017-11-10T23:00:00Z");
+var thirdDate = new Date("2018-01-06T00:30:00Z");
 	
 
 var diffDays = Math.floor(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
@@ -9,8 +9,8 @@ var diffDays2 = Math.floor(Math.abs((thirdDate.getTime() - firstDate.getTime())/
 
 	
 // Don't judge me. I'm too lazy to learn jQuery
-diffDays0 = diffDays;
-diffDays1 = diffDays0;
+diffDays0 = diffDays - 33;
+diffDays1 = diffDays;
 
 //Update page
 document.getElementById("diffDays0").innerHTML = diffDays0;
@@ -25,7 +25,7 @@ if(diffDays == 0){
 };
 
 if (firstDate > thirdDate){
-	document.getElementById("diffDays2").innerHTML = "Dewey Wins!";
+	document.getElementById("diffDays2").innerHTML = "Stranded!";
 } else if (diffDays2 == 1){
 	document.getElementById("diffDays2").innerHTML = diffDays2 + " Day";
 } else if (diffDays2 == 0){
