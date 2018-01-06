@@ -1,15 +1,13 @@
 var oneDay = 24*60*60*1000;
 var firstDate = new Date();
-var secondDate = new Date("2017-11-10T05:38:42Z");
-var thirdDate = new Date("2018-01-06T00:30:00Z");
+var secondDate = new Date("2018-01-06T01:00:00Z");
+//var thirdDate = new Date("2018-01-06T00:30:00Z");
 	
 
 var diffDays = Math.floor(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
-var diffDays2 = Math.floor(Math.abs((thirdDate.getTime() - firstDate.getTime())/(oneDay)));
-
 	
 // Don't judge me. I'm too lazy to learn jQuery
-diffDays0 = diffDays - 33;
+diffDays0 = diffDays;
 diffDays1 = diffDays;
 
 //Update page
@@ -24,6 +22,10 @@ if(diffDays == 0){
 	document.getElementById("diffDays").innerHTML = diffDays + " Days";
 };
 
+/* Currently In The Dark
+
+var diffDays2 = Math.floor(Math.abs((thirdDate.getTime() - firstDate.getTime())/(oneDay)));
+
 if (firstDate > thirdDate){
 	document.getElementById("diffDays2").innerHTML = "Stranded!";
 } else if (diffDays2 == 1){
@@ -33,4 +35,4 @@ if (firstDate > thirdDate){
 } else {
 	document.getElementById("diffDays2").innerHTML = diffDays2 + " Days"
 };
-
+*/
