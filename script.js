@@ -17,7 +17,7 @@
 	diffMinutes = Math.floor(diffMinutes);
 	diffSeconds = Math.floor(diffSeconds);
 	
-	diffDays1 = diffDays - 33;
+	diffDays1 = diffDays;
 	diffDays2 = diffDays;
 	
 	//Update page
