@@ -43,12 +43,13 @@
 	}
 	a {
     text-decoration: none;
+	color: gold;
 	}
 	a:visited {
-		color: steelblue;
+	color: royalblue;
 	}
 	a:hover {
-		color: hotpink;
+	color: hotpink;
 	}
 	@font-face {
     font-family: Crewniverse;
