@@ -43,10 +43,10 @@
 	}
 	a {
     text-decoration: none;
-	color: gold;
+	color: royalblue;
 	}
 	a:visited {
-	color: royalblue;
+	color: gold;
 	}
 	a:hover {
 	color: hotpink;
