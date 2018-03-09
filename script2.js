@@ -1,13 +1,13 @@
 var oneDay = 24*60*60*1000;
 var firstDate = new Date();
 var secondDate = new Date("2018-01-06T01:00:00Z");
-var thirdDate = new Date("2018-04-01T13:00:00Z");
+var thirdDate = new Date("2018-04-09T05:00:00Z");
 	
 
 var diffDays = Math.floor(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
 	
 // Don't judge me. I'm too lazy to learn jQuery
-diffDays0 = diffDays;
+diffDays0 = diffDays - 61;
 diffDays1 = diffDays;
 
 //Update page

@@ -1,6 +1,6 @@
 	var oneDay = 24*60*60*1000;
 	var secondDate = new Date("2018-01-06T01:00:00Z");
-	var thirdDate = new Date("2018-04-01T13:00:00Z");
+	var thirdDate = new Date("2018-04-09T05:00:00Z");
 	
 	function count(){
 	var firstDate = new Date();
@@ -17,7 +17,7 @@
 	diffMinutes = Math.floor(diffMinutes);
 	diffSeconds = Math.floor(diffSeconds);
 	
-	diffDays1 = diffDays;
+	diffDays1 = diffDays - 61;
 	diffDays2 = diffDays;
 	
 	//Update page
