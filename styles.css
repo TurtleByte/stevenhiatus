@@ -1,11 +1,12 @@
 	div{
 	font-family: "Crewniverse";
 	text-align: center;
-	color: slategray;
+	color: #ECCC9B;
+    /*text-shadow: -1px 0 #52607E, 0 1px #52607E, 1px 0 #52607E, 0 -1px #52607E;*/
 	}
 	hr{
 	border: none;
-	background-color: slategray;
+	background-color: #ECCC9B;
 	height: 5px;
 	width: 80%;
 	}
@@ -26,24 +27,24 @@
 	height: 100%;
 	}
 	body {
-    background-image: url("19.png");
+    background-image: url("9.png");
     background-size: cover;
     background-repeat: no-repeat;
 	background-attachment: fixed;
     }
 	table {
     border-collapse: collapse;
-	color: slategray;
+	color: #ECCC9B;
 	}
 	td {
 	padding: 3px;
 	text-align: center;
-	border: 1px solid slategray;
+	border: 1px solid #ECCC9B;
 	padding: 4px;
 	}
 	a {
     text-decoration: none;
-	color: royalblue;
+	color: #81A8FF;
 	}
 	a:visited {
 	color: gold;
