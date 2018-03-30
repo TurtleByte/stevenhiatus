@@ -1,7 +1,7 @@
 var oneDay = 24*60*60*1000;
 var firstDate = new Date();
 var secondDate = new Date("2018-03-26T04:16:00Z");
-//var thirdDate = new Date("2018-03-26T04:00:00Z");
+var thirdDate = new Date("2018-05-07T12:00:00Z");
 	
 
 var diffDays = Math.floor(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
@@ -22,12 +22,12 @@ if(diffDays == 0){
 	document.getElementById("diffDays").innerHTML = diffDays + " Days";
 };
 
-/* Currently In The Dark
+
 
 var diffDays2 = Math.floor(Math.abs((thirdDate.getTime() - firstDate.getTime())/(oneDay)));
 
 if (firstDate > thirdDate){
-	document.getElementById("diffDays2").innerHTML = "Stranded!";
+	document.getElementById("diffDays2").innerHTML = "Fly Me To The Moon!";
 } else if (diffDays2 == 1){
 	document.getElementById("diffDays2").innerHTML = diffDays2 + " Day";
 } else if (diffDays2 == 0){
@@ -35,5 +35,5 @@ if (firstDate > thirdDate){
 } else {
 	document.getElementById("diffDays2").innerHTML = diffDays2 + " Days"
 };
-
+/*
 */

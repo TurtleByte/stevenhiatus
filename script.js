@@ -1,6 +1,6 @@
 	var oneDay = 24*60*60*1000;
 	var secondDate = new Date("2018-03-26T04:16:00Z");
-	var thirdDate = new Date("2018-03-26T04:00:00Z");
+	var thirdDate = new Date("2018-05-07T12:00:00Z");
 	
 	function count(){
 	var firstDate = new Date();
@@ -41,7 +41,7 @@
 	if (thirdDate > firstDate ){
 		document.getElementById("count2").innerHTML = diffDays2 + "d : " + diffHours2 + "h : " + diffMinutes2 + "m : " + diffSeconds2 + "s";
 	} else {
-		document.getElementById("count2").innerHTML = "Stranded!";
+		document.getElementById("count2").innerHTML = "Fly Me To The Moon!";
 	}
 	
 	//wow look, a count up. you'd think i'd do this more efficiently

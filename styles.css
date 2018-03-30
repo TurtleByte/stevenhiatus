@@ -2,7 +2,7 @@
 	font-family: "Crewniverse";
 	text-align: center;
 	color: #ECCC9B;
-    /*text-shadow: -1px 0 #52607E, 0 1px #52607E, 1px 0 #52607E, 0 -1px #52607E;*/
+    text-shadow: -1px 0 #52607E, 0 1px #52607E, 1px 0 #52607E, 0 -1px #52607E;
 	}
 	hr{
 	border: none;
@@ -23,6 +23,7 @@
 	.tab {
 	position: relative;
 	transform: translate(0%, 110%);
+	font-size: 100%;
 	width: 100%;
 	height: 100%;
 	}
@@ -35,6 +36,7 @@
 	table {
     border-collapse: collapse;
 	color: #ECCC9B;
+	width: 95%;
 	}
 	td {
 	padding: 3px;
@@ -57,7 +59,4 @@
     src: url('crewniverse_font.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-	}
-	td {
-	font-size:95%;
 	}
