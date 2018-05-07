@@ -43,9 +43,10 @@
 	if (thirdDate > firstDate ){
 		document.getElementById("count2").innerHTML = diffDays2 + "d : " + diffHours2 + "h : " + diffMinutes2 + "m : " + diffSeconds2 + "s";
 	} else {
-		document.getElementById("count2").innerHTML = "Fly Me To The Moon!";
+		document.getElementById("count2").innerHTML = "May the truth set you free!";
 	}
 	
+/*
 	//wow look, a count up. you'd think i'd do this more efficiently
 	
 	var diffDays3 = (firstDate.getTime() - fourthDate.getTime()) / oneDay;
@@ -62,7 +63,9 @@
 	//Update page
 	document.getElementById("count3").innerHTML = diffDays3 + "d : " + diffHours3 + "h : " + diffMinutes3 + "m : " + diffSeconds3 + "s";
 	};
-		
+*/
+	};
+	
 	window.setInterval(function(){
 		count();
 	}, 250);
