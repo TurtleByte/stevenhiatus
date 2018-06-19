@@ -1,6 +1,6 @@
 	var oneDay = 24*60*60*1000;
 	var secondDate = new Date("2018-05-08T00:00:00Z");
-	var thirdDate = new Date("2018-06-21T00:00:00Z");
+	var thirdDate = new Date("2018-07-02T23:30:00Z");
 	
 	//Convert time to UTC from EDT (UTC -4), you useless pebble.
 	
@@ -19,7 +19,7 @@
 	diffMinutes = Math.floor(diffMinutes);
 	diffSeconds = Math.floor(diffSeconds);
 	
-	diffDays1 = diffDays;
+	diffDays1 = diffDays - 41;
 	diffDays2 = diffDays;
 	
 	//Update page
@@ -43,7 +43,7 @@
 	if (thirdDate > firstDate ){
 		document.getElementById("count2").innerHTML = diffDays2 + "d : " + diffHours2 + "h : " + diffMinutes2 + "m : " + diffSeconds2 + "s";
 	} else {
-		document.getElementById("count2").innerHTML = "Every single moment is worth its weight in gold";
+		document.getElementById("count2").innerHTML = "The Aftermath begins";
 	}
 	
 /*
