@@ -1,6 +1,6 @@
 	var oneDay = 24*60*60*1000;
-	var secondDate = new Date("2018-05-08T00:00:00Z");
-	var thirdDate = new Date("2018-07-02T23:30:00Z");
+	var secondDate = new Date("2018-07-02T23:30:00Z");
+	var thirdDate = new Date("2018-07-03T23:30:00Z");
 	
 	//Convert time to UTC from EDT (UTC -4), you useless pebble.
 	
@@ -19,7 +19,7 @@
 	diffMinutes = Math.floor(diffMinutes);
 	diffSeconds = Math.floor(diffSeconds);
 	
-	diffDays1 = diffDays - 41;
+	diffDays1 = diffDays;
 	diffDays2 = diffDays;
 	
 	//Update page
