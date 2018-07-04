@@ -1,7 +1,7 @@
 var oneDay = 24*60*60*1000;
 var firstDate = new Date();
-var secondDate = new Date("2018-07-02T23:30:00Z");
-var thirdDate = new Date("2018-07-02T23:30:00Z");
+var secondDate = new Date("2018-07-03T23:30:00Z");
+var thirdDate = new Date("2018-07-04T23:30:00Z");
 	
 
 var diffDays = Math.floor(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
