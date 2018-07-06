@@ -2,7 +2,7 @@
 	font-family: "Crewniverse";
 	text-align: center;
 	color: #000000;
-    /* text-shadow: -1px 0 #FFFFFF, 0 1px #FFFFFF, 1px 0 #FFFFFF, 0 -1px #FFFFFF; */
+    /* text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000; */
 	line-height: 1.4;
 	}
 	hr{
@@ -29,7 +29,7 @@
 	height: 100%;
 	}	
 	body {
-    background-image: url("13.png");
+    background-image: url("11.png");
     background-size: cover;
     background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -48,14 +48,15 @@
 	a {
     text-decoration: none;
 	color: #0040a0;
-	text-shadow: none;
+	text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
 	}
 	a:visited {
 	color: #e9f96d;
-	text-shadow: none;
+	text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
 	}
 	a:hover {
 	color: hotpink;
+	text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
 	}
 	@font-face {
     font-family: Crewniverse;
