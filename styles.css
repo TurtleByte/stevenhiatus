@@ -1,13 +1,13 @@
 	div{
 	font-family: "Crewniverse";
 	text-align: center;
-	color: azure;
+	color: white;
     /* text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000; */
 	line-height: 1.4;
 	}
 	hr{
 	border: none;
-	background-color: azure;
+	background-color: white;
 	height: 5px;
 	width: 80%;
 	}
@@ -37,22 +37,22 @@
     }
 	table {
     border-collapse: collapse;
-	color: azure;
+	color: white;
 	width: 95%;
 	}
 	td {
 	padding: 3px;
 	text-align: center;
-	border: 3px solid azure;
+	border: 3px solid white;
 	padding: 4px;
 	}
 	a {
     text-decoration: none;
-	color: #0040a0;
+	color: #29b7ed;
 	text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
 	}
 	a:visited {
-	color: #e9f96d;
+	color: #fbff21;
 	text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
 	}
 	a:hover {
