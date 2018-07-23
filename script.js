@@ -1,5 +1,5 @@
 	var oneDay = 24*60*60*1000;
-	var secondDate = new Date("2018-07-06T23:56:30Z");
+	var secondDate = new Date("2018-07-22T22:35:56Z");
 	var thirdDate = new Date("2018-07-21T17:00:00Z");
 	var mode = 0;
 	//Convert time to UTC from EDT (UTC -4), you useless pebble.
