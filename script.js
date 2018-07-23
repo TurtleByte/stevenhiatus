@@ -55,7 +55,7 @@
 		if (thirdDate > firstDate ){
 			document.getElementById("count2").innerHTML = diffDays2 + "d : " + diffHours2 + "h : " + diffMinutes2 + "m : " + diffSeconds2 + "s";
 		} else {
-			document.getElementById("count2").innerHTML = "The Aftermath begins";
+			document.getElementById("count2").innerHTML = "Legs From Here To Homeworld";
 		}
 		document.getElementById("count").style.fontSize = "100%";
 		
