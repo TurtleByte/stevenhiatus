@@ -1,6 +1,6 @@
 	var oneDay = 24*60*60*1000;
 	var secondDate = new Date("2018-07-22T22:31:26Z");
-	var thirdDate = new Date("2018-09-11T20:07:26Z");
+	var thirdDate = new Date("2018-10-08T22:31:26Z");
 	var mode = 0;
 	//Convert time to UTC from EDT (UTC -4), you useless pebble.
 	
@@ -55,7 +55,7 @@
 		if (thirdDate > firstDate ){
 			document.getElementById("count2").innerHTML = diffDays2 + "d : " + diffHours2 + "h : " + diffMinutes2 + "m : " + diffSeconds2 + "s";
 		} else {
-			document.getElementById("count2").innerHTML = "We're Above Average!";
+			document.getElementById("count2").innerHTML = "Rank Up!";
 		}
 		document.getElementById("count").style.fontSize = "100%";
 		
