@@ -5,15 +5,15 @@
 	var countdownEnd = new Date("2018-10-29T22:31:26Z"); // 99 Full Days Later
 	var mode = 0; //more specific mode is default
 	
-	//looks at the subreddit
 	function Get(yourUrl){
 		var Httpreq = new XMLHttpRequest(); // a new request
 		Httpreq.open("GET",yourUrl,false);
 		Httpreq.send(null);
 		return Httpreq.responseText;          
-	}
+		}
 	var subbredditJSON = JSON.parse(Get('https://www.reddit.com/r/StevenUniverse/new.json'));
 	
+	//looks at the subreddit
 	function checkSubreddit(){
 		for(var i = 0; i < 25; i++){
 			if(subbredditJSON.data.children[i].data.selftext.includes("hiatus") == true || subbredditJSON.data.children[i].data.title.includes("hiatus") == true){
@@ -127,5 +127,8 @@
 		timer("up", latestRelease, "count");
 		timer("down", countdownEnd, "count2");
 		timer("up", checkSubreddit(), "count3");
-		checkSubreddit();
 	}, 250);
+	
+	window.setInterval(function(){
+		subbredditJSON = JSON.parse(Get('https://www.reddit.com/r/StevenUniverse/new.json'));
+	}, 30000);
