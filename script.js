@@ -3,9 +3,28 @@
 	//Convert time to UTC from EDT (UTC -4), you useless pebble.
 	var latestRelease = new Date("2018-07-22T22:31:26Z"); // End of Legs From Here To Homeworld
 	var countdownEnd = new Date("2018-10-29T22:31:26Z"); // 99 Full Days Later
-	var lastHiatusMention = new Date("2018-10-13T07:04:07Z"); // Timestamp of last reddit post on /r/stevenuniverse about the hiatus
 	var mode = 0; //more specific mode is default
 	
+	//looks at the subreddit
+	function Get(yourUrl){
+		var Httpreq = new XMLHttpRequest(); // a new request
+		Httpreq.open("GET",yourUrl,false);
+		Httpreq.send(null);
+		return Httpreq.responseText;          
+	}
+	var subbredditJSON = JSON.parse(Get('https://www.reddit.com/r/StevenUniverse/new.json'));
+	
+	function checkSubreddit(){
+		for(var i = 0; i < 25; i++){
+			if(subbredditJSON.data.children[i].data.selftext.includes("hiatus") == true || subbredditJSON.data.children[i].data.title.includes("hiatus") == true){
+				var lastHiatusMention = new Date(subbredditJSON.data.children[i].data.created_utc * 1000);
+				document.getElementById("hiatusLink").href = "https://old.reddit.com" + subbredditJSON.data.children[i].data.permalink;
+				break;
+			}
+		};
+		return lastHiatusMention;
+	};
+
 	function switchMode(){
 		if(mode == 0){
 			mode = 1;
@@ -107,5 +126,6 @@
 	window.setInterval(function(){
 		timer("up", latestRelease, "count");
 		timer("down", countdownEnd, "count2");
-		timer("up", lastHiatusMention, "count3");
+		timer("up", checkSubreddit(), "count3");
+		checkSubreddit();
 	}, 250);
