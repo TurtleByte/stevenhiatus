@@ -102,7 +102,7 @@
 	['Jungle Moon','Your Mother and Mine','05 Jan 2018','08 Mar 2018','26 Mar 2018',61,18,79,'CN App / PS Vue Release'],
 	['A Single Pale Rose',"Now We're Only Falling Apart",'07 May 2018','18 Jun 2018','02 Jul 2018',41,14,55,''],
 	['Reunited','Legs From Here To Homeworld','06 Jul 2018','21 Jul 2018','22 Jul 2018',14,1,15,'SDCC 2018/CN App Release'],
-	['Legs From Here Top Homeworld','???','22 Jul 2018','???','???',0,'N/A',0,'']
+	['Legs From Here To Homeworld','???','22 Jul 2018','???','???',0,'N/A',0,'']
 	];
 
 	function createTable(array) {
