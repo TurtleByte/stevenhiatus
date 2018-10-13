@@ -1,8 +1,10 @@
 	var oneDay = 24*60*60*1000;
-	var latestRelease = new Date("2018-07-22T22:31:26Z");
-	var countdownEnd = new Date("2018-10-29T22:31:26Z");
-	var mode = 0;
+
 	//Convert time to UTC from EDT (UTC -4), you useless pebble.
+	var latestRelease = new Date("2018-07-22T22:31:26Z"); // End of Legs From Here To Homeworld
+	var countdownEnd = new Date("2018-10-14T06:16:26Z"); // 99 Full Days Later
+	var lastHiatusMention = new Date("2018-10-12T22:13:01Z"); // Timestamp of last reddit post on /r/stevenuniverse about the hiatus
+	var mode = 0; //more specific mode is default
 	
 	function switchMode(){
 		if(mode == 0){
@@ -14,11 +16,16 @@
 			document.getElementById("moreorless").innerHTML = "less";
 		};
 	};
-	
-	function count(){
+	 
+	function timer(updown, zeroTime, id){
 		var timeNow = new Date();
-		//Calculates each portion of time
-		var diffDays = (timeNow.getTime() - latestRelease.getTime()) / oneDay;
+		if (updown == "up"){
+			var diffDays = (timeNow.getTime() - zeroTime.getTime()) / oneDay;
+			}
+		else if (updown == "down"){
+			var diffDays = (zeroTime.getTime() - timeNow.getTime()) / oneDay;
+		}
+		
 		var diffHours = (diffDays - Math.floor(diffDays)) * 24;
 		var diffMinutes = (diffHours - Math.floor(diffHours)) * 60;
 		var diffSeconds = (diffMinutes - Math.floor(diffMinutes)) * 60;
@@ -31,55 +38,29 @@
 		
 		diffDays1 = diffDays;
 		diffDays2 = diffDays;
-		
+	
 		if (mode == 0){
-		
-		//Update page
-		document.getElementById("count").innerHTML = diffDays + "d : " + diffHours + "h : " + diffMinutes + "m : " + diffSeconds + "s";
-
-		//the rest is for the countdown, it's a copy of the above
-		var diffDays2 = (countdownEnd.getTime() - timeNow.getTime()) / oneDay;
-		var diffHours2 = (diffDays2 - Math.floor(diffDays2)) * 24;
-		var diffMinutes2 = (diffHours2 - Math.floor(diffHours2)) * 60;
-		var diffSeconds2 = (diffMinutes2 - Math.floor(diffMinutes2)) * 60;
-		
-		diffDays2 = Math.floor(diffDays2);
-		diffHours2 = Math.floor(diffHours2);
-		diffMinutes2 = Math.floor(diffMinutes2);
-		diffSeconds2 = Math.floor(diffSeconds2);
-		
-		if (countdownEnd > timeNow ){
-			document.getElementById("count2").innerHTML = diffDays2 + "d : " + diffHours2 + "h : " + diffMinutes2 + "m : " + diffSeconds2 + "s";
-		} else {
-			document.getElementById("count2").innerHTML = "Rank Up!";
+			document.getElementById(id).innerHTML =  diffDays + "d : " + diffHours + "h : " + diffMinutes + "m : " + diffSeconds + "s";
+			document.getElementById(id).style.fontSize = "100%";
 		}
-		document.getElementById("count").style.fontSize = "100%";
+		else if (mode == 1){
+			if (diffDays == 1){
+				document.getElementById(id).innerHTML =  diffDays + " Day";	
+			}
+			else if (diffDays == 0){
+				document.getElementById(id).innerHTML =  "Less Than A Day";		
+			}
+			else {
+				document.getElementById(id).innerHTML =  diffDays + " Days";		
+			}
+			document.getElementById(id).style.fontSize = "160%";
+		};
 		
+		if (updown == "down" && diffDays < 0){
+			document.getElementById(id).innerHTML =  "Rank Up!";
 		}
-		else if(mode == 1){
-			if(diffDays == 0){
-				document.getElementById("count").innerHTML = diffDays + " Days";
-			} else if (diffDays == 1){
-				document.getElementById("count").innerHTML = diffDays + " Day";
-			} else {
-				document.getElementById("count").innerHTML = diffDays + " Days";
-			};
-
-			var diffDays2 = Math.floor(Math.abs((countdownEnd.getTime() - timeNow.getTime())/(oneDay)));
-
-			if (timeNow > countdownEnd){
-				document.getElementById("count2").innerHTML = "Rank Up!";
-			} else if (diffDays2 == 1){
-				document.getElementById("count2").innerHTML = diffDays2 + " Day";
-			} else if (diffDays2 == 0){
-				document.getElementById("count2").innerHTML = "Less than a Day";
-			} else {
-				document.getElementById("count2").innerHTML = diffDays2 + " Days"
-			};
-			document.getElementById("count").style.fontSize = "160%";
-		}
-
-		return diffDays;
+		
+		return diffDays
 	};
 	
 	var hiatusList = [
@@ -106,8 +87,9 @@
 	];
 
 	function createTable(array) {
-		var diffDays = count();
+		var diffDays = timer("up", latestRelease, "count");
 		array[array.length - 1][5] = diffDays;
+	//	array[array.length - 1][6] = diffDays; <-- Not being used as we're In The Dark
 		array[array.length - 1][7] = diffDays;
 		for(var i = 0; i < array.length ; i++){
 			var row = document.createElement('tr');
@@ -122,11 +104,8 @@
 		};
 	};
 	
-	function start(){
-		count();
-		createTable(hiatusList);
-	};
-	
 	window.setInterval(function(){
-			count();
+		timer("up", latestRelease, "count");
+		timer("down", countdownEnd, "count2");
+		timer("up", lastHiatusMention, "count3");
 	}, 250);
