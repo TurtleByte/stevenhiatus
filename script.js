@@ -11,9 +11,9 @@
 		Httpreq.send(null);
 		return Httpreq.responseText;          
 		}
-	var subbredditJSON = JSON.parse(Get('https://www.reddit.com/r/StevenUniverse/new.json'));
+	var subbredditJSON = JSON.parse(Get('https://www.reddit.com/r/StevenUniverse/new.json?limit=100'));  
 	
-	//looks at the subreddit
+	//looks at the subreddit JSON
 	function checkSubreddit(){
 		for(var i = 0; i < 25; i++){
 			if(subbredditJSON.data.children[i].data.selftext.includes("hiatus") == true || subbredditJSON.data.children[i].data.title.includes("hiatus") == true){
