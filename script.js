@@ -2,8 +2,8 @@
 
 	//Convert time to UTC from EDT (UTC -4), you useless pebble.
 	var latestRelease = new Date("2018-07-22T22:31:26Z"); // End of Legs From Here To Homeworld
-	var countdownEnd = new Date("2018-10-14T06:16:26Z"); // 99 Full Days Later
-	var lastHiatusMention = new Date("2018-10-12T22:13:01Z"); // Timestamp of last reddit post on /r/stevenuniverse about the hiatus
+	var countdownEnd = new Date("2018-10-29T22:31:26Z"); // 99 Full Days Later
+	var lastHiatusMention = new Date("2018-10-13T07:04:07Z"); // Timestamp of last reddit post on /r/stevenuniverse about the hiatus
 	var mode = 0; //more specific mode is default
 	
 	function switchMode(){
