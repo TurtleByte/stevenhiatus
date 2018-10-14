@@ -130,5 +130,5 @@
 	}, 250);
 	
 	window.setInterval(function(){
-		subbredditJSON = JSON.parse(Get('https://www.reddit.com/r/StevenUniverse/new.json?limit=100');
+		subbredditJSON = JSON.parse(Get('https://www.reddit.com/r/StevenUniverse/new.json?limit=100'));
 	}, 30000);
