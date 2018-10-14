@@ -15,7 +15,7 @@
 	
 	//looks at the subreddit JSON
 	function checkSubreddit(){
-		for(var i = 0; i < 25; i++){
+		for(var i = 0; i < 100; i++){
 			if(subbredditJSON.data.children[i].data.selftext.includes("hiatus") == true || subbredditJSON.data.children[i].data.title.includes("hiatus") == true){
 				var lastHiatusMention = new Date(subbredditJSON.data.children[i].data.created_utc * 1000);
 				document.getElementById("hiatusLink").href = "https://old.reddit.com" + subbredditJSON.data.children[i].data.permalink;
