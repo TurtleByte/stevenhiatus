@@ -1,8 +1,9 @@
 	var oneDay = 24*60*60*1000;
 	var latestRelease = new Date("2018-07-22T22:31:26Z"); // End of Legs From Here To Homeworld
-	var countdownEnd = new Date("2018-10-29T22:31:26Z"); // 99 Full Days Later
+	var countdownEnd = new Date("2018-10-29T22:31:26Z"); // Next Milestone is 99 Full Days Later
 	var mode = 0; //DD:HH:MM:SS mode is default
 	
+	//voodoo magic
 	function Get(yourUrl){
 		var Httpreq = new XMLHttpRequest();
 		Httpreq.open("GET",yourUrl,false);
@@ -13,12 +14,14 @@
 	//Initially loads the last 100 posts on subreddit
 	var subbredditJSON = JSON.parse(Get('https://www.reddit.com/r/StevenUniverse/new.json?limit=100'));
 		
-	//looks at the loaded posts, this function runs four times every half-second
+	//looks at the loaded posts, this runs four times every half-second
 	function checkSubreddit(){
 		var lastHiatusMention;
+		//list of words that counts as a mention of the hiatus
 		var keywords = ["hiatus"];
 		for(var i = 0; i < 100; i++){
 			for(var j = 0; j < keywords.length; j++){
+				//checks only post titles and post content if self-post
 				if(subbredditJSON.data.children[i].data.selftext.toLowerCase().includes(keywords[j]) == true || subbredditJSON.data.children[i].data.title.toLowerCase().includes(keywords[j]) == true){
 					lastHiatusMention = new Date(subbredditJSON.data.children[i].data.created_utc * 1000);
 					document.getElementById("hiatusLink").href = "https://old.reddit.com" + subbredditJSON.data.children[i].data.permalink;
@@ -36,10 +39,12 @@
 
 	function switchMode(){
 		if(mode == 0){
+			//DAYS only mode
 			mode = 1;
 			document.getElementById("moreorless").innerHTML = "more";
 		}
 		else if(mode == 1){
+			//DD:HH:MM:SS mode
 			mode = 0;
 			document.getElementById("moreorless").innerHTML = "less";
 		};
@@ -111,7 +116,8 @@
 	['Reunited','Legs From Here To Homeworld','06 Jul 2018','21 Jul 2018','22 Jul 2018',14,1,15,'SDCC 2018/CN App Release'],
 	['Legs From Here To Homeworld','???','22 Jul 2018','???','???',0,'N/A',0,'']
 	];
-
+	
+	//makes an HTML table from the array
 	function createTable(array) {
 		var diffDays = timer("up", latestRelease, "count");
 		array[array.length - 1][5] = diffDays;
@@ -130,14 +136,14 @@
 		};
 	};
 	
-	//the counts update 4 times per second to minimize gaps
+	//does the ticking
 	window.setInterval(function(){
 		timer("up", latestRelease, "count");
 		timer("down", countdownEnd, "count2");
 		timer("up", checkSubreddit(), "count3");
 	}, 250);
 	
-	//every 30 seconds, the most recent 100 posts are loaded up again in case there has been a new post that mentions hiatus
+	//every 30 seconds, the most recent 100 posts on the subreddit are loaded up again in case there has been a new post that mentions hiatus
 	window.setInterval(function(){
 		subbredditJSON = JSON.parse(Get('https://www.reddit.com/r/StevenUniverse/new.json?limit=100'));
 	}, 30000);
