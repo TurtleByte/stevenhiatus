@@ -4,18 +4,26 @@
 	var mode = 0; //DD:HH:MM:SS mode is default
 	
 	//voodoo magic
-	function Get(yourUrl){
+	function GetThen(yourUrl, onload){
 		var Httpreq = new XMLHttpRequest();
-		Httpreq.open("GET",yourUrl,false);
+		Httpreq.open("GET",yourUrl,true);
+		Httpreq.onload = function() {
+			if (Httpreq.readyState === Httpreq.DONE && Httpreq.status === 200) {
+				onload(Httpreq.responseText);
+			}
+		};
 		Httpreq.send(null);
-		return Httpreq.responseText;          
 		}
 	
 	//Initially loads the last 100 posts on subreddit
-	var subbredditJSON = JSON.parse(Get('https://www.reddit.com/r/StevenUniverse/new.json?limit=100'));
+	function requestSubredditData(after = null) {
+		var url = 'https://www.reddit.com/r/StevenUniverse/new.json?limit=100';
+		GetThen(after ? url + '&after=' + after : url, checkSubreddit);
+	}
 		
 	//looks at the loaded posts, this runs four times every half-second
-	function checkSubreddit(){
+	function checkSubreddit(response){
+		var subbredditJSON = JSON.parse(response);
 		var lastHiatusMention;
 		//list of words that counts as a mention of the hiatus
 		var keywords = ["hiatus"];
@@ -31,8 +39,7 @@
 		};
 		//loads the next 100 if hiatus is not mentioned then runs the function again
 		if (lastHiatusMention == null){
-			subbredditJSON = JSON.parse(Get('https://old.reddit.com/r/stevenuniverse/new/.json?count=100&after=' + subbredditJSON.data.after));
-			checkSubreddit();
+			requestSubredditData(subbredditJSON.data.after);
 		};
 		return lastHiatusMention;
 	};
@@ -135,15 +142,12 @@
 			};
 		};
 	};
-	
+
 	//does the ticking
 	window.setInterval(function(){
 		timer("up", latestRelease, "count");
 		timer("down", countdownEnd, "count2");
-		timer("up", checkSubreddit(), "count3");
 	}, 250);
 	
 	//every 30 seconds, the most recent 100 posts on the subreddit are loaded up again in case there has been a new post that mentions hiatus
-	window.setInterval(function(){
-		subbredditJSON = JSON.parse(Get('https://www.reddit.com/r/StevenUniverse/new.json?limit=100'));
-	}, 30000);
+	window.setInterval(requestSubredditData, 30000);
