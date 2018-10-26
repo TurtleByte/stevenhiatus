@@ -1,40 +1,49 @@
-var oneDay = 24*60*60*1000;
+	var oneDay = 24*60*60*1000;
 	var latestRelease = new Date("2018-07-22T22:31:26Z"); // End of Legs From Here To Homeworld
 	var countdownEnd = new Date("2018-10-29T22:31:26Z"); // Next Milestone is 99 Full Days Later
 	var mode = 0; //DD:HH:MM:SS mode is default
+	var lastHiatusMention = null;
 	
 	//voodoo magic
-	function Get(yourUrl){
+	function GetThen(yourUrl, onload){
 		var Httpreq = new XMLHttpRequest();
-		Httpreq.open("GET",yourUrl,false);
+		Httpreq.open("GET",yourUrl,true);
+		Httpreq.onload = function() {
+			if (Httpreq.readyState === Httpreq.DONE && Httpreq.status === 200) {
+				onload(Httpreq.responseText);
+			}
+		};
 		Httpreq.send(null);
-		return Httpreq.responseText;          
-		}
+	}
 	
 	//Initially loads the last 100 posts on subreddit
-	var subbredditJSON = JSON.parse(Get('https://www.reddit.com/r/StevenUniverse/new.json?limit=100'));
+	function requestSubredditData(after = null) {
+		var url = 'https://www.reddit.com/r/StevenUniverse/new.json?limit=100';
+		GetThen(after ? url + '&after=' + after : url, checkSubreddit);
+	}
 		
 	//looks at the loaded posts, this runs four times every half-second
-	function checkSubreddit(){
-		var lastHiatusMention;
+	function checkSubreddit(response){
+		var subbredditJSON = JSON.parse(response);
+		var lastHiatusMentionThisCheck;
 		//list of words that counts as a mention of the hiatus
 		var keywords = ["hiatus"];
 		for(var i = 0; i < 100; i++){
 			for(var j = 0; j < keywords.length; j++){
 				//checks only post titles and post content if self-post
 				if(subbredditJSON.data.children[i].data.selftext.toLowerCase().includes(keywords[j]) == true || subbredditJSON.data.children[i].data.title.toLowerCase().includes(keywords[j]) == true){
-					lastHiatusMention = new Date(subbredditJSON.data.children[i].data.created_utc * 1000);
+					lastHiatusMentionThisCheck = new Date(subbredditJSON.data.children[i].data.created_utc * 1000);
 					document.getElementById("hiatusLink").href = "https://old.reddit.com" + subbredditJSON.data.children[i].data.permalink;
 					i = 100;
 				};
 			};
 		};
 		//loads the next 100 if hiatus is not mentioned then runs the function again
-		if (lastHiatusMention == null){
-			subbredditJSON = JSON.parse(Get('https://old.reddit.com/r/stevenuniverse/new/.json?count=100&after=' + subbredditJSON.data.after));
-			checkSubreddit();
-		};
-		return lastHiatusMention;
+		if (lastHiatusMentionThisCheck == null) {
+			requestSubredditData(subbredditJSON.data.after);
+		} else {
+			lastHiatusMention = lastHiatusMentionThisCheck;
+		}
 	};
 
 	function switchMode(){
@@ -51,6 +60,10 @@ var oneDay = 24*60*60*1000;
 	};
 	 
 	function timer(updown, zeroTime, id){
+		if (!zeroTime) {
+			return null;
+		}
+
 		var timeNow = new Date();
 		if (updown == "up"){
 			var diffDays = (timeNow.getTime() - zeroTime.getTime()) / oneDay;
@@ -135,15 +148,13 @@ var oneDay = 24*60*60*1000;
 			};
 		};
 	};
-	
+
 	//does the ticking
 	window.setInterval(function(){
 		timer("up", latestRelease, "count");
 		timer("down", countdownEnd, "count2");
-		timer("up", checkSubreddit(), "count3");
+		timer("up", lastHiatusMention, "count3");
 	}, 250);
 	
 	//every 30 seconds, the most recent 100 posts on the subreddit are loaded up again in case there has been a new post that mentions hiatus
-	window.setInterval(function(){
-		subbredditJSON = JSON.parse(Get('https://www.reddit.com/r/StevenUniverse/new.json?limit=100'));
-	}, 30000);
+	window.setInterval(requestSubredditData, 30000);
