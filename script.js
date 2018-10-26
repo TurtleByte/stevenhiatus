@@ -1,6 +1,7 @@
 	var oneDay = 24*60*60*1000;
 	var latestRelease = new Date("2018-07-22T22:31:26Z"); // End of Legs From Here To Homeworld
 	var countdownEnd = new Date("2018-10-29T22:31:26Z"); // Next Milestone is 99 Full Days Later
+	var countdownEnd2 = new Date("2018-10-27T19:30:00Z"); // LA Comic Con Steven Universe Main Stage Panel
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
 	
@@ -100,7 +101,7 @@
 		};
 		
 		if (updown == "down" && diffDays < 0){
-			document.getElementById(id).innerHTML =  "Rank Up!";
+			document.getElementById(id).innerHTML =  "Time's Up!";
 		}
 		
 		return diffDays
@@ -154,6 +155,7 @@
 		timer("up", latestRelease, "count");
 		timer("down", countdownEnd, "count2");
 		timer("up", lastHiatusMention, "count3");
+		timer("down", countdownEnd2, "count4");
 	}, 250);
 	
 	//every 30 seconds, the most recent 100 posts on the subreddit are loaded up again in case there has been a new post that mentions hiatus
