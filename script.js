@@ -1,6 +1,6 @@
 	var oneDay = 24*60*60*1000;
 	var latestRelease = new Date("2018-07-22T22:31:26Z"); // End of Legs From Here To Homeworld
-	var countdownEnd = new Date("2018-10-29T22:31:26Z"); // Next Milestone is 99 Full Days Later
+	var countdownEnd = new Date("2018-11-24T22:31:26Z"); // Next Milestone is 125 Full Days Later
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
 	
