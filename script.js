@@ -111,7 +111,7 @@
 	['Last Episode','Next Episode','Preceding Release','Date Announced','Following Release','Days In The Dark','Days Waiting','Hiatus Length','Note'],
 	['Roses Room','Coach Steven','14 May 2014','25 Jul 2014','21 Aug 2014',72,27,99,''],
 	['Lion 3','Warp Tour','04 Dec 2014','30 Dec 2014','08 Jan 2015',26,9,35,''],
-	['Reformed','Sworn To The Sword','30 Apr 2015','26 May 2015','15 Jun 2015',26,20,46,''],
+	['Reformed','Sworn To The Sword','30 Apr 2015','27 May 2015','15 Jun 2015',26,20,47,''],
 	['Chille Tid','Cry For Help','19 Jun 2015','20 Jun 2015','13 Jun 2015',1,23,24,'Two shorts released during hiatus'],
 	['Friend Ship','Nightmare Hospital','17 Jul 2015','02 Sep 2015','10 Sep 2015',47,8,55,''],
 	['Too Far','The Answer','15 Oct 2015','18 Dec 2015','04 Jan 2016',64,17,81,'Four shorts released during hiatus'],
