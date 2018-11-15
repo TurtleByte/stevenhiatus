@@ -30,10 +30,11 @@
 	}	
 	body {
 	background-color: black;
-/*    background-image: url("11.png"); */
-    background-size: cover;
+	background-image: url("WD2.png");
+    background-size: contain;
     background-repeat: no-repeat;
 	background-attachment: fixed;
+	background-position: bottom left;
     }
 	table {
     border-collapse: collapse;
