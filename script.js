@@ -135,8 +135,8 @@
 	function createTable(array) {
 		var diffDays = timer("up", latestRelease, "count");
 	//	array[array.length - 1][5] = diffDays; <-- Not being used as we're Waiting
-		array[array.length - 2][6] = diffDays - 119; 
-		array[array.length - 2][7] = diffDays;
+		array[array.length - 1][6] = diffDays - 119; 
+		array[array.length - 1][7] = diffDays;
 		for(var i = 0; i < array.length ; i++){
 			var row = document.createElement('tr');
 			row.setAttribute("id", "myTr" + i);
