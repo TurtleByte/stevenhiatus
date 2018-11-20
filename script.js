@@ -1,6 +1,7 @@
 	var oneDay = 24*60*60*1000;
 	var latestRelease = new Date("2018-07-22T22:31:26Z"); // End of Legs From Here To Homeworld
 	var countdownEnd = new Date("2018-11-24T22:31:26Z"); // Next Milestone is 125 Full Days Later
+	var nextRelease = new Date("2018-12-25T00:30:00Z"); // Start of Premiere Time of Familiar
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
 	
@@ -127,15 +128,16 @@
 	['Jungle Moon','Your Mother and Mine','05 Jan 2018','08 Mar 2018','26 Mar 2018',61,18,79,'CN App / PS Vue Release'],
 	['A Single Pale Rose',"Now We're Only Falling Apart",'07 May 2018','18 Jun 2018','02 Jul 2018',41,14,55,''],
 	['Reunited','Legs From Here To Homeworld','06 Jul 2018','21 Jul 2018','22 Jul 2018',14,1,15,'SDCC 2018/CN App Release'],
-	['Legs From Here To Homeworld','???','22 Jul 2018','???','???',0,'N/A',0,'']
+	['Legs From Here To Homeworld','Familiar','22 Jul 2018','19 Nov 2018','24 Dec 2018',119,0,0,''],
+	['Battle of Heart and Mind','???','21 Jan 2019','???','???',0,'N/A',0,'']
 	];
 	
 	//makes an HTML table from the array
 	function createTable(array) {
 		var diffDays = timer("up", latestRelease, "count");
-		array[array.length - 1][5] = diffDays;
-	//	array[array.length - 1][6] = diffDays; <-- Not being used as we're In The Dark
-		array[array.length - 1][7] = diffDays;
+	//	array[array.length - 1][5] = diffDays; <-- Not being used as we're Waiting
+		array[array.length - 2][6] = diffDays - 119; 
+		array[array.length - 2][7] = diffDays;
 		for(var i = 0; i < array.length ; i++){
 			var row = document.createElement('tr');
 			row.setAttribute("id", "myTr" + i);
@@ -154,6 +156,7 @@
 		timer("up", latestRelease, "count");
 		timer("down", countdownEnd, "count2");
 		timer("up", lastHiatusMention, "count3");
+		timer("down", nextRelease, "count4");
 	}, 250);
 	
 	//every 30 seconds, the most recent 100 posts on the subreddit are loaded up again in case there has been a new post that mentions hiatus
