@@ -153,7 +153,7 @@
 	//does the ticking
 	window.setInterval(function(){
 		timer("up", latestRelease, "count");
-		timer("down", countdownEnd, "count2");
+	//	timer("down", countdownEnd, "count2");
 		timer("up", lastHiatusMention, "count3");
 		timer("down", nextRelease, "count4");
 	}, 250);
