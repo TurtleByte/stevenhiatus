@@ -1,7 +1,7 @@
 	var oneDay = 24*60*60*1000;
-	var latestRelease = new Date("2018-12-25T00:41:33Z"); // End of Familiar
+	var latestRelease = new Date("2019-01-01T00:41:10Z"); // End of Together Alone
 	var countdownEnd = new Date("2018-11-24T22:31:26Z"); // [Currently Not In Use]
-	var nextRelease = new Date("2019-01-01T00:30:00Z"); // Start of Premiere Time of Together Alone
+	var nextRelease = new Date("2019-01-08T00:30:00Z"); // Premiere Time of Escapism
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
 	
@@ -97,7 +97,7 @@
 			else {
 				document.getElementById(id).innerHTML =  diffDays + " Days";		
 			}
-			document.getElementById(id).style.fontSize = "160%";
+			document.getElementById(id).style.fontSize = "100%";
 		};
 		
 		if (updown == "down" && diffDays < 0){
