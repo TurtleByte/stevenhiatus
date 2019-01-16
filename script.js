@@ -1,7 +1,7 @@
 	var oneDay = 24*60*60*1000;
 	var latestRelease = new Date("2019-01-08T00:41:10Z"); // End of Escapism
 	var countdownEnd = new Date("2018-11-24T22:31:26Z"); // [Currently Not In Use]
-	var nextRelease = new Date("2019-01-22T00:00:00Z"); // Premiere Time of Battle of Heart And Mind
+	var nextRelease = new Date("2019-01-22T00:00:00Z"); // Premiere Time of Change Your Mind
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
 	
