@@ -1,15 +1,19 @@
 	div{
 	font-family: "Crewniverse";
 	text-align: center;
-	color: white;
-    /* text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000; */
+	color: #28313e;
+    /*text-shadow: -2px 0 #fd6826, 0 1px #fd6826, 2px 0 #fd6826, 0 -1px #fd6826;*/
 	line-height: 1.4;
 	}
 	hr{
 	border: none;
-	background-color: white;
+	background-color: #28313e;
 	height: 5px;
 	width: 80%;
+	}
+	.extra{
+	text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
+	letter-spacing: 1px;
 	}
 	.count {
 	position: absolute;
@@ -17,6 +21,9 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 90%;
+	color: #fd6826;
+	text-shadow: -3px 0 #28313e, 0 3px #28313e, 3px 0 #28313e, 0 -3px #28313e;
+	letter-spacing: 3px;
 	}
 	.head {
 	font-size: 110%;
@@ -30,21 +37,22 @@
 	}	
 	body {
 	background-color: black;
-	background-image: url("WD2.png");
-    background-size: contain;
+	background-image: url("21.png");
     background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position: bottom left;
+	/*background-position: bottom left;
+	 background-size: contain;
+   */
     }
 	table {
     border-collapse: collapse;
-	color: white;
+	color: #28313e;
 	width: 95%;
 	}
 	td {
 	padding: 3px;
 	text-align: center;
-	border: 3px solid white;
+	border: 3px solid #28313e;
 	padding: 4px;
 	}
 	a {
