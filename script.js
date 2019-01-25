@@ -1,7 +1,6 @@
 	var oneDay = 24*60*60*1000;
 	var latestRelease = new Date("2019-01-22T00:44:39Z"); // End of Change Your Mind
-	var countdownEnd = new Date("2018-11-24T22:31:26Z"); // [Currently Not In Use]
-	var nextRelease = new Date("2019-01-22T00:00:00Z"); // [Currently Not In Use]
+	var nextRelease = new Date("2019-09-01T00:00:00Z"); // Fall: SU Movie
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
 	
@@ -129,8 +128,37 @@
 	['A Single Pale Rose',"Now We're Only Falling Apart",'07 May 2018','18 Jun 2018','02 Jul 2018',41,14,55,''],
 	['Reunited','Legs From Here To Homeworld','06 Jul 2018','21 Jul 2018','22 Jul 2018',14,1,15,'SDCC 2018/CN App Release'],
 	['Legs From Here To Homeworld','Familiar','22 Jul 2018','19 Nov 2018','24 Dec 2018',119,36,155,''],
-	['Change Your Mind','???','22 Jan 2019','N/A','N/A',0,0,0,'']
+	['Change Your Mind','???','22 Jan 2019','N/A','Fall 2019',0,0,0,'']
 	];
+	
+	function hiatusRankCheck(){
+		var diffDays = timer("up", latestRelease, "count");
+        var hiatusRank = 1;
+        var nextHiatusLength = hiatusList[1][7];
+        for(var i = 1; i < hiatusList.length - 2; i++){
+            if(hiatusList[i][7] > diffDays){
+                hiatusRank += 1;
+                if(hiatusList[i][7] < nextHiatusLength){
+                    nextHiatusLength = hiatusList[i][7];
+                }
+            }
+        }
+		var suffix;
+			if(hiatusRank % 10 == 1 && hiatusRank != 11){
+				suffix = "st";
+			}
+			else if(hiatusRank % 10 == 2 && hiatusRank != 12){
+				suffix = "nd";
+			}
+			else if(hiatusRank % 10 == 3 && hiatusRank != 13){
+				suffix = "rd";
+			}
+			else suffix = "th";
+		document.getElementById("hiatusRank").innerHTML =  hiatusRank + suffix;
+		document.getElementById("nextHiatusLength").innerHTML =  nextHiatusLength;
+		var nextHiatusLengthDate = new Date(latestRelease.getTime() + (nextHiatusLength * 86400000));; // [Currently Not In Use]
+		return nextHiatusLengthDate
+	}
 	
 	//makes an HTML table from the array
 	function createTable(array) {
@@ -150,11 +178,11 @@
 			};
 		};
 	};
-
+	
 	//does the ticking
 	window.setInterval(function(){
 		timer("up", latestRelease, "count");
-	//	timer("down", countdownEnd, "count2");
+		timer("down", hiatusRankCheck(), "count2");
 		timer("up", lastHiatusMention, "count3");
 		timer("down", nextRelease, "count4");
 	}, 250);
