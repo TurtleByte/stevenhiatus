@@ -133,16 +133,16 @@
 	
 	function hiatusRankCheck(){
 		var diffDays = timer("up", latestRelease, "count");
-        var hiatusRank = 1;
-        var nextHiatusLength = hiatusList[1][7];
-        for(var i = 1; i < hiatusList.length - 2; i++){
+        var hiatusRank = 0;
+        var nextHiatusLength = hiatusList[14][7];
+        for(var i = 1; i < hiatusList.length; i++){
             if(hiatusList[i][7] > diffDays){
-                hiatusRank += 1;
-                if(hiatusList[i][7] < nextHiatusLength){
-                    nextHiatusLength = hiatusList[i][7];
+				hiatusRank += 1;
+				if(hiatusList[i][7] < nextHiatusLength){
+                nextHiatusLength = hiatusList[i][7];
                 }
-            }
-        }
+			}
+		}
 		var suffix;
 			if(hiatusRank % 10 == 1 && hiatusRank != 11){
 				suffix = "st";
@@ -156,8 +156,8 @@
 			else suffix = "th";
 		document.getElementById("hiatusRank").innerHTML =  hiatusRank + suffix;
 		document.getElementById("nextHiatusLength").innerHTML =  nextHiatusLength;
-		var nextHiatusLengthDate = new Date(latestRelease.getTime() + (nextHiatusLength * 86400000));; // [Currently Not In Use]
-		return nextHiatusLengthDate
+		var nextHiatusLengthDate = new Date(latestRelease.getTime() + (nextHiatusLength * 86400000));
+		return nextHiatusLengthDate;
 	}
 	
 	//makes an HTML table from the array
