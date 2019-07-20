@@ -1,6 +1,6 @@
 	var oneDay = 24*60*60*1000;
 	var latestRelease = new Date("2019-01-22T00:44:39Z"); // End of Change Your Mind
-	var nextRelease = new Date("2019-09-01T00:00:00Z"); // Fall: SU Movie
+	var nextRelease = new Date("2019-09-02T00:00:00Z"); // Fall: SU Movie
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
 	
@@ -128,7 +128,7 @@
 	['A Single Pale Rose',"Now We're Only Falling Apart",'07 May 2018','18 Jun 2018','02 Jul 2018',41,14,55,''],
 	['Reunited','Legs From Here To Homeworld','06 Jul 2018','21 Jul 2018','22 Jul 2018',14,1,15,'SDCC 2018/CN App Release'],
 	['Legs From Here To Homeworld','Familiar','22 Jul 2018','19 Nov 2018','24 Dec 2018',119,36,155,''],
-	['Change Your Mind','???','22 Jan 2019','N/A','Fall 2019',0,0,0,'']
+	['Change Your Mind','Steven Universe: The Movie','22 Jan 2019','20 Jul 2019','02 Sep 2019',179,0,0,'']
 	];
 	
 	function hiatusRankCheck(){
@@ -153,8 +153,16 @@
 			else if(hiatusRank % 10 == 3 && hiatusRank != 13){
 				suffix = "rd";
 			}
+			else if(hiatusRank == 0){
+				suffix = "The";
+			}
 			else suffix = "th";
-		document.getElementById("hiatusRank").innerHTML =  hiatusRank + suffix;
+		if(hiatusRank > 0){
+			document.getElementById("hiatusRank").innerHTML =  hiatusRank + suffix;
+			}
+		else{
+			document.getElementById("hiatusRank").innerHTML =  suffix;
+			}
 		document.getElementById("nextHiatusLength").innerHTML =  nextHiatusLength;
 		var nextHiatusLengthDate = new Date(latestRelease.getTime() + (nextHiatusLength * 86400000));
 		return nextHiatusLengthDate;
@@ -163,8 +171,8 @@
 	//makes an HTML table from the array
 	function createTable(array) {
 		var diffDays = timer("up", latestRelease, "count");
-		array[array.length - 1][5] = diffDays;
-	//	array[array.length - 1][6] = diffDays - 119; 
+	//	array[array.length - 1][5] = diffDays;
+		array[array.length - 1][6] = diffDays - 179; 
 		array[array.length - 1][7] = diffDays;
 		for(var i = 0; i < array.length ; i++){
 			var row = document.createElement('tr');
