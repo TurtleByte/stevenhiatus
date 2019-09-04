@@ -1,13 +1,13 @@
 	div{
 	font-family: "Crewniverse";
 	text-align: center;
-	color: #28313e;
-    /*text-shadow: -2px 0 #fd6826, 0 1px #fd6826, 2px 0 #fd6826, 0 -1px #fd6826;*/
+	color: #ffbcde;
+    text-shadow: -2px 0 #000000, 0 1px #000000, 2px 0 #000000, 0 -1px #000000;
 	line-height: 1.4;
 	}
 	hr{
 	border: none;
-	background-color: #28313e;
+	background-color: #f850a1;
 	height: 5px;
 	width: 80%;
 	}
@@ -21,7 +21,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 90%;
-	color: #fd6826;
+	color: #f850a1;
 	text-shadow: -3px 0 #28313e, 0 3px #28313e, 3px 0 #28313e, 0 -3px #28313e;
 	letter-spacing: 3px;
 	}
@@ -37,7 +37,7 @@
 	}	
 	body {
 	background-color: black;
-	background-image: url("21.png");
+	background-image: url("1.png");
     background-repeat: no-repeat;
 	background-attachment: fixed;
 	 background-size: cover;
@@ -46,13 +46,13 @@
     }
 	table {
     border-collapse: collapse;
-	color: #28313e;
+	color: #ffbcde;
 	width: 95%;
 	}
 	td {
 	padding: 3px;
 	text-align: center;
-	border: 3px solid #28313e;
+	border: 3px solid #f850a1;
 	padding: 4px;
 	}
 	a {

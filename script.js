@@ -48,14 +48,18 @@
 
 	function switchMode(){
 		if(mode == 0){
-			//DAYS only mode
-			mode = 1;
-			document.getElementById("moreorless").innerHTML = "more";
+			mode = 2;
+			document.getElementById("moreorless").innerHTML = "to count less precisely instead.";
 		}
 		else if(mode == 1){
-			//DD:HH:MM:SS mode
+			//switch to DD:HH:MM:SS mode
 			mode = 0;
-			document.getElementById("moreorless").innerHTML = "less";
+			document.getElementById("moreorless").innerHTML = "to feel like Spinel.";
+		}
+		else if(mode == 2){
+			//DD:HH:MM:SS mode
+			mode = 1;
+			document.getElementById("moreorless").innerHTML = "to return to normal.";
 		};
 	};
 	 
@@ -91,12 +95,16 @@
 				document.getElementById(id).innerHTML =  diffDays + " Day";	
 			}
 			else if (diffDays == 0){
-				document.getElementById(id).innerHTML =  "Less Than A Day";		
+				document.getElementById(id).innerHTML =  diffHours + " Hours";
 			}
 			else {
 				document.getElementById(id).innerHTML =  diffDays + " Days";		
 			}
 			document.getElementById(id).style.fontSize = "100%";
+		}
+		else if (mode == 2){
+			var totalTime = diffSeconds + (diffMinutes * 60) + (diffHours * 3600) + (diffDays * 86400);
+			document.getElementById(id).innerHTML = totalTime.toLocaleString() + " Seconds";
 		};
 		
 		if (updown == "down" && diffDays < 0){
