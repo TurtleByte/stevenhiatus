@@ -1,6 +1,6 @@
 	var oneDay = 24*60*60*1000;
-	var latestRelease = new Date("2019-09-02T23:30:00Z"); // End of SU Movie
-	var nextRelease = new Date("2019-12-08T01:00:00Z"); // Steven Universe Future Premiere
+	var latestRelease = new Date("2019-09-02T23:30:00-05:00"); // End of SU Movie
+	var nextRelease = new Date("2019-12-07T20:00:00-05:00"); // Steven Universe Future Premiere
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
 	
