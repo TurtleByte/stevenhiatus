@@ -1,6 +1,6 @@
 	var oneDay = 24*60*60*1000;
-	var latestRelease = new Date("2019-12-07T20:58:38-05:00"); // End of Volleyball
-	var nextRelease = new Date("2019-12-14T20:00:00-05:00"); // Episode 5 release
+	var latestRelease = new Date("2019-12-14T20:28:11-05:00"); // End of A Very Special Episode
+	var nextRelease = new Date("2019-12-21T20:00:00-05:00"); // Snow Day release
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
 	
