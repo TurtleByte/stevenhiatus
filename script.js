@@ -1,5 +1,5 @@
 	var oneDay = 24*60*60*1000;
-	var latestRelease = new Date("2019-12-21T20:28:34-05:00"); // End of Why So Blue
+	var latestRelease = new Date("2019-12-28T20:28:43-05:00"); // End of Prickly Pair
 	var nextRelease = new Date("2019-12-28T20:00:00-05:00"); // Little Graduatiom release
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
@@ -181,10 +181,10 @@
 	//makes an HTML table from the array
 	function createTable(array) {
 		var diffDays = timer("up", latestRelease, "count");
-	//Disabled since we're not on hiatus
-	//	array[array.length - 1][5] = diffDays;
+	//Enabled since we on hiatus
+		array[array.length - 1][5] = diffDays;
 	//	array[array.length - 1][6] = diffDays - 78; 
-	//	array[array.length - 1][7] = diffDays;
+		array[array.length - 1][7] = diffDays;
 		for(var i = 0; i < array.length ; i++){
 			var row = document.createElement('tr');
 			row.setAttribute("id", "myTr" + i);

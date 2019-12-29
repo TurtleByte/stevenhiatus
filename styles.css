@@ -37,10 +37,10 @@
 	}	
 	body {
 	background-color: black;
-	background-image: url("1.png");
+	background-image: url("7.png");
     background-repeat: no-repeat;
 	background-attachment: fixed;
-	 background-size: cover;
+	background-size: cover;
 	/*background-position: bottom left;
    */
     }
