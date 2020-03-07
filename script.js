@@ -1,6 +1,6 @@
 	var oneDay = 24*60*60*1000;
-	var latestRelease = new Date("2019-12-28T20:28:43-05:00"); // End of Prickly Pair
-	var nextRelease = new Date("2020-03-06T19:00:00-05:00"); // Next Episode release
+	var latestRelease = new Date("2020-03-06T19:30:00-05:00"); // End of Bismuth Casual
+	var nextRelease = new Date("2020-03-13T19:00:00-05:00"); // Next Episode release
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
 	
@@ -138,7 +138,8 @@
 	['Legs From Here To Homeworld','Familiar','22 Jul 2018','19 Nov 2018','24 Dec 2018',119,36,155,''],
 	['Change Your Mind','Steven Universe: The Movie','22 Jan 2019','20 Jul 2019','02 Sep 2019',179,44,223,''],
 	['Steven Universe: The Movie','Little Homeschool','02 Sep 2019','20 Nov 2019','07 Dec 2019',78,17,95,''],
-	['Prickly Pair','???','28 Dec 2019','21 Feb 2020','06 Mar 2020',53,0,0,'']
+	['Prickly Pair','In Dreams','28 Dec 2019','21 Feb 2020','06 Mar 2020',53,15,68,''],
+	['???','???','27 Mar 2020','???','???',0,0,0,'The Infinite Hiatus']
 	];
 	
 	function hiatusRankCheck(){
@@ -181,10 +182,10 @@
 	//makes an HTML table from the array
 	function createTable(array) {
 		var diffDays = timer("up", latestRelease, "count");
-	//Enabled since we on hiatus
+	// Disabled since we on hiatus
 	//	array[array.length - 1][5] = diffDays;
-		array[array.length - 1][6] = diffDays - 53; 
-		array[array.length - 1][7] = diffDays;
+	//	array[array.length - 1][6] = diffDays; 
+	//	array[array.length - 1][7] = diffDays;
 		for(var i = 0; i < array.length ; i++){
 			var row = document.createElement('tr');
 			row.setAttribute("id", "myTr" + i);
