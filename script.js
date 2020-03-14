@@ -1,6 +1,6 @@
 	var oneDay = 24*60*60*1000;
-	var latestRelease = new Date("2020-03-06T19:30:00-05:00"); // End of Bismuth Casual
-	var nextRelease = new Date("2020-03-13T19:00:00-05:00"); // Next Episode release
+	var latestRelease = new Date("2020-03-13T19:30:00-05:00"); // End of Growing Pains
+	var nextRelease = new Date("2020-03-20T19:00:00-05:00"); // Next Episode release
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
 	
