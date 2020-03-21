@@ -1,6 +1,6 @@
 	var oneDay = 24*60*60*1000;
-	var latestRelease = new Date("2020-03-13T19:30:00-05:00"); // End of Growing Pains
-	var nextRelease = new Date("2020-03-20T19:00:00-05:00"); // Next Episode release
+	var latestRelease = new Date("2020-03-20T19:30:00-05:00"); // End of Growing Pains
+	var nextRelease = new Date("2020-03-27T19:00:00-05:00"); // Next Episode release
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
 	
@@ -139,7 +139,7 @@
 	['Change Your Mind','Steven Universe: The Movie','22 Jan 2019','20 Jul 2019','02 Sep 2019',179,44,223,''],
 	['Steven Universe: The Movie','Little Homeschool','02 Sep 2019','20 Nov 2019','07 Dec 2019',78,17,95,''],
 	['Prickly Pair','In Dreams','28 Dec 2019','21 Feb 2020','06 Mar 2020',53,15,68,''],
-	['???','???','27 Mar 2020','???','???',0,0,0,'The Infinite Hiatus']
+	['The Future','','27 Mar 2020','','',0,0,0,'The Infinite Hiatus']
 	];
 	
 	function hiatusRankCheck(){
