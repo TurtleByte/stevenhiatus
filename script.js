@@ -1,5 +1,5 @@
 	var oneDay = 24*60*60*1000;
-	var latestRelease = new Date("2020-03-20T19:30:00-05:00"); // End of Growing Pains
+	var latestRelease = new Date("2020-03-23T16:48:00-05:00"); // Estimated End of Homeworld Bound
 	var nextRelease = new Date("2020-03-27T19:00:00-05:00"); // Next Episode release
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
