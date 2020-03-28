@@ -1,5 +1,5 @@
 	var oneDay = 24*60*60*1000;
-	var latestRelease = new Date("2020-03-23T16:48:00-05:00"); // Estimated End of Homeworld Bound
+	var latestRelease = new Date("2020-03-27T19:00:00-05:00"); // Estimated End of Homeworld Bound
 	var nextRelease = new Date("2020-03-27T19:00:00-05:00"); // Next Episode release
 	var mode = 0; //DD:HH:MM:SS mode is default
 	var lastHiatusMention = null;
@@ -182,8 +182,7 @@
 	//makes an HTML table from the array
 	function createTable(array) {
 		var diffDays = timer("up", latestRelease, "count");
-	// Disabled since we on hiatus
-	//	array[array.length - 1][5] = diffDays;
+		array[array.length - 1][5] = diffDays;
 	//	array[array.length - 1][6] = diffDays; 
 	//	array[array.length - 1][7] = diffDays;
 		for(var i = 0; i < array.length ; i++){
