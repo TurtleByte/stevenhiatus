@@ -184,7 +184,7 @@
 		var diffDays = timer("up", latestRelease, "count");
 		array[array.length - 1][5] = diffDays;
 	//	array[array.length - 1][6] = diffDays; 
-	//	array[array.length - 1][7] = diffDays;
+		array[array.length - 1][7] = diffDays;
 		for(var i = 0; i < array.length ; i++){
 			var row = document.createElement('tr');
 			row.setAttribute("id", "myTr" + i);
